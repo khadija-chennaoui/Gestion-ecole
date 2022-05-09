@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -20,7 +18,7 @@
             <div class="col">
                 <div class="card" class="contenant" style="width:258px;margin:12%;padding:0%;">
                     <div class="card bg-dark text-white">
-                        <img src="image/profs.jpg" class="card-img" alt="..." width="300px">
+                        <img src="../views/img/profs.jpg" class="card-img" alt="..." width="300px">
                         <div class="card-img-overlay">
                             <div class="mt-3 mx-3" style="background-color:rgb(255 255 254 / 61%);">
                                 <h5 class="card-title mt-5 text-dark ">Card title</h5>
@@ -33,7 +31,7 @@
             <div class="col">
                 <div class="card" class="contenant" style="width:258px;margin:12%;padding:0%;">
                     <div class="card bg-dark text-white">
-                        <img src="image/eleves.jpg" class="card-img" alt="..." width="300px">
+                        <img src="../views/img/eleves.jpg" class="card-img" alt="..." width="300px">
                         <div class="card-img-overlay">
 
                             <div class="mt-3 mx-3" style="background-color:rgb(255 255 254 / 61%);">
@@ -47,7 +45,7 @@
             <div class="col">
                 <div class="card" class="contenant" style="width:258px;margin:12%;padding:0%;">
                     <div class="card bg-dark text-white">
-                        <img src="image/class.jpg" class="card-img" alt="..." width="300px">
+                        <img src="../views/img/class.jpg" class="card-img" alt="..." width="300px">
                         <div class="card-img-overlay">
                             <div class="mt-3 mx-3" style="background-color:rgb(255 255 254 / 61%);">
                                 <h5 class="card-title mt-5 text-dark ">Card title</h5>
