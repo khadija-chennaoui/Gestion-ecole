@@ -1,0 +1,72 @@
+
+body{
+    background-image:url('images/login.png');
+    background-repeat: no-repeat;
+    background-size:60%;
+}
+.row{
+    background: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    margin: 150px;
+    margin-left: 26%;
+    padding: 4rem 1rem 4rem 1rem;
+    width: 50%;
+    margin-right: 200px;
+    max-width:28%;
+    margin-top: 100px;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    margin: 158px 47px 25px 1030px;
+}
+img{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+form{
+    padding-right: 70px;
+    width: 100%;
+
+}
+input[type=text],input[type=password]{
+    box-sizing: border-box;
+    padding: 12px 5px;
+    outline:none;
+    border: solid 1px black;
+    border-bottom: 1px dotted #fff;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    align-items: center;
+   
+}
+.btn1{
+    border: none;
+    outline: none;
+    height: 40px;
+    width:87%;
+    color: black;
+    border-radius: 50PX;
+    font-weight: bold;
+    background-color: #bfa7ec;
+    margin-top: 10px;
+}
+.btn1:hover{
+    background: rgb(225, 219, 219);
+    color: #8350e1;
+}
+@media screen and (max-width: 768px){
+    img{
+    display: none;
+}
+.row{
+    width: 100%;
+}
+}    
+
