@@ -1,6 +1,7 @@
 
+ <?php include('script.php'); ?>
 <body >
-<nav class="navbar navbar-light " style="" >
+<nav class="navbar navbar-light ">
   <div class="container-fluid" >
     <img src="../views/img/logo.png" style="max-width:100px;" alt="">
     <a class="navbar-brand" href="#"></a>
