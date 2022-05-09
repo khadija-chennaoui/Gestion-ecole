@@ -1,5 +1,4 @@
 
-
 body{
     background-image:url('images/login.png');
     background-repeat: no-repeat;
@@ -15,7 +14,7 @@ body{
     padding: 4rem 1rem 4rem 1rem;
     width: 50%;
     margin-right: 200px;
-    max-width: 28%;
+    max-width:28%;
     margin-top: 100px;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -62,3 +61,12 @@ input[type=text],input[type=password]{
     background: rgb(225, 219, 219);
     color: #8350e1;
 }
+@media screen and (max-width: 768px){
+    img{
+    display: none;
+}
+.row{
+    width: 100%;
+}
+}    
+
