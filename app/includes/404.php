@@ -7,7 +7,6 @@
    
     <title>error 404</title>
     <?php include('script.php'); ?>
-    
 </head>
 <body style="background-color: #9573D4;">
 
