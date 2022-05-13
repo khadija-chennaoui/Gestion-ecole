@@ -4,20 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>administrateurs</title>
-    <style>
-       
-     .table tbody tr:hover td, .table tbody tr:hover th {
-    background-color:#6e42c126;
- }
-  
 
-    </style>
+    <title>administrateurs</title>
+  
 </head>
 <body>
-    <nav>
+   
     <?php include('../includes/sidebar.php') ?>
-    </nav>
+  
     <div class="container-fluid px-5 pt-3">
         <div class="row">
             <div class="table-wrapper">
@@ -147,6 +141,13 @@
        
             </div>
     </div>
-           
+    <style>
+       
+       .table tbody tr:hover td, .table tbody tr:hover th {
+      background-color:#6e42c126;
+   }
+    
+  
+      </style>
 </body>
 </html>
