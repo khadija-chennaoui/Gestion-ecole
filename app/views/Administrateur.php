@@ -42,7 +42,7 @@
                         <th>Options</th>
                     </tr>
                 </thead>
-                <tbody  class="fw-bold" >
+                <tbody  class="fw-bold">
                     <tr>
                         <td>1</td>
                         <td> nom Admin X</td>

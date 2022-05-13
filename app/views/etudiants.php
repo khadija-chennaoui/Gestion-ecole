@@ -32,7 +32,7 @@
                 <div class="table-responsive">
                 <table class="table table-striped table align-middle   ">
                 <thead>
-                    <tr style="background-color:#28a746b3;">
+                    <tr style="background-color:#28a746b3;  height: 53px;">
                        
                         <th>Matricule</th>
                         <th>Nom complet</th>
@@ -138,11 +138,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <form class="form-container" action="" method="POST" onsubmit="return validation()">  
+                    <form class="form-container" action="" method="POST" >  
                                     <div class="mb-3 fw-bold" >
                                         <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                         <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter name complet" style="margin-bottom: 32px;">
-                                        <p id="img" style="margin-bottom: -1rem; width: 10px;"></p>
+                                        <!-- <p id="img" style="margin-bottom: -1rem; width: 10px;"></p> -->
                                         <span id="nomid" class ="mt-5 text-danger"style="font-weight: bold;"></span>
                                     </div>
                                     <div class="mb-3  fw-bold"  >
@@ -151,12 +151,7 @@
                                         <p id="img3" style="margin-bottom: -1rem;"></p>
                                         <span id="classeid" class ="mt-5 text-danger"style="font-weight: bold;"></span>
                                     </div>
-                                    <div class="mb-3  fw-bold"  >
-                                        <label for="exampleFormControlInput1" class="form-label">classe</label>
-                                        <input type="text" class="form-control" id="classe" name="classe" placeholder="Enter le classe">
-                                        <p id="img3" style="margin-bottom: -1rem;"></p>
-                                        <span id="classeid" class ="mt-5 text-danger"style="font-weight: bold;"></span>
-                                    </div>
+                                  
                                     <div class="mb-3  fw-bold"  >
                                         <label for="exampleFormControlInput1" class="form-label">parents</label>
                                         <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter le nom des parents">
