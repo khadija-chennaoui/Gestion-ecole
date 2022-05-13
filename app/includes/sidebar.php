@@ -56,14 +56,9 @@
 
   </div>
 </nav>
-<!-- <div class="mx-5 my-5 py-1"  style=" background-color: #15d7ed; background-image: linear-gradient(160deg, #15d7ed 0%, #C850C0 30%, #eef1ea 66%, #ed8f06 100%);">
-  
-    <div style="background-color:white; " class=" mx-1 ">
-   <div>pre</div>
-   
 
-    </div>
-</div> -->
+</div> 
 <hr>
+
 </body>
 </html>
