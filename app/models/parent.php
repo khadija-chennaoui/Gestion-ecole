@@ -24,22 +24,29 @@ require('personne.php');
         return $sql=$this->GetData("delete from parents where Matricule =?")->execute([$this->Matricule]);
        }catch(PDOException $e){ return $e->getMessage();} 
     }
+    public function Update(){
+      try{
+        return $sql=$this->GetData("update parents set Nom_complet=?,	Genre=?,Job=?,Adresse=? ,Phone=? where Matricule =?")->execute([$this->Nom,$this->Genre,$this->job,$this->Adresse,$this->phone,$this->Matricule]);
+       }catch(PDOException $e){ return $e->getMessage();} 
+    }
 
 
 }
 
 
-$test = new Parents();
+// $test = new Parents();
 
-$test->setMatricule(1);
+// $test->setMatricule(1);
 // $test->Delete();
 
 // var_dump($test->Afficher());
+// $test->setMatricule(2);
 // $test->setNom("admin");
 // $test->setGenre("M");
 // $test->job="not";
 // $test->setAdresse("123");
-// $test->phone="à___";
+// $test->phone="06";
 // $test->Ajouter();
+// $test->Update();
 
 
