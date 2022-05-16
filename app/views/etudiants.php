@@ -146,6 +146,14 @@
                                     <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter name complet" style="margin-bottom: 32px;">
                                 </div>
                                 <div class="mb-3  fw-bold">
+                                    <label for="exampleFormControlInput1" class="form-label">Date naissance</label>
+                                    <input type="date" class="form-control" id="datenec" name="datenec" placeholder="Enter phone">
+                                </div>
+                                <div class="mb-3  fw-bold">
+                                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+                                </div>
+                                <div class="mb-3  fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Classe</label>
                                     <input type="text" class="form-control" id="classe" name="classe" placeholder="Enter classe">
                                 </div>
@@ -159,14 +167,8 @@
                                     <span id="addressid" class="mt-5 text-danger" style="font-weight: bold;"></span>
                                     <textarea class="form-control" id="adress" name="adres" rows="3"></textarea>
                                 </div>
-                                <div class="mb-3  fw-bold">
-                                    <label for="exampleFormControlInput1" class="form-label">Date naissance</label>
-                                    <input type="date" class="form-control" id="datenec" name="datenec" placeholder="Enter phone">
-                                </div>
-                                <div class="mb-3  fw-bold">
-                                    <label for="exampleFormControlInput1" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
-                                </div>
+                               
+                               
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <button type="submit" name="save" class="btn btn-success mT-3">Save</button>
