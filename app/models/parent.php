@@ -15,7 +15,7 @@ require('personne.php');
 
     public function Afficher(){
       try{
-        $sql=$this->connect()->query("select * from parents");
+        $sql=$this->connect()->query("select * from parents ");
         return $sql->fetchAll();
        }catch(PDOException $e){ return $e->getMessage();} 
     }
@@ -27,6 +27,13 @@ require('personne.php');
     public function Update(){
       try{
         return $sql=$this->GetData("update parents set Nom_complet=?,	Genre=?,Job=?,Adresse=? ,Phone=? where Matricule =?")->execute([$this->Nom,$this->Genre,$this->job,$this->Adresse,$this->phone,$this->Matricule]);
+       }catch(PDOException $e){ return $e->getMessage();} 
+    }
+    public function Selectone(){
+      try{
+        $result= $this->GetData("select * from parents where Matricule =?");
+        $result->execute([$this->Matricule ]);
+        return $result->fetch();
        }catch(PDOException $e){ return $e->getMessage();} 
     }
 
