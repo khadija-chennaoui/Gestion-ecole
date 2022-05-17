@@ -1,6 +1,6 @@
 <?
  class Personne extends Dbconnect{
-
+     
 private $Matricule;
 private $Nom;
 private $Genre;

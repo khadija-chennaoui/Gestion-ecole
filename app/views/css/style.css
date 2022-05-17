@@ -12,6 +12,7 @@ body{
   justify-content: center;    
   align-items: center;
 }
+
 .circle {
 position: relative;
 display: inline-block;

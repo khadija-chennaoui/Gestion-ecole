@@ -1,3 +1,4 @@
+
 <?php
 class Dbconnect
 {
@@ -11,4 +12,11 @@ class Dbconnect
         return $conn;
     }
 
+    protected function GetData($req)
+  {
+    try
+    {
+    return $this->connect()->prepare($req);
+    }catch (PDOException $ex) {echo $ex->getMessage();}
+  }
 }
