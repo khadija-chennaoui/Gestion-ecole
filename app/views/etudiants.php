@@ -8,8 +8,7 @@
     <style>
        
      .table tbody tr:hover td, .table tbody tr:hover th {
-    background-color: #28a74646;
-}
+    background-color: #28a74646;}
     </style>
 </head>
 <body>
@@ -138,31 +137,21 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <form class="form-container" action="" method="POST" onsubmit="return validation()">  
+                    <form class="form-container" action="models/étudiant.php method="POST" onsubmit="return validation()">  
                                     <div class="mb-3 fw-bold" >
                                         <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                         <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter name complet" style="margin-bottom: 32px;">
                                         <p id="img" style="margin-bottom: -1rem; width: 10px;"></p>
                                         <span id="nomid" class ="mt-5 text-danger"style="font-weight: bold;"></span>
                                     </div>
-                                    <div class="mb-3  fw-bold"  >
-                                        <label for="exampleFormControlInput1" class="form-label">classe</label>
-                                        <input type="text" class="form-control" id="classe" name="classe" placeholder="Enter classe">
-                                        <p id="img3" style="margin-bottom: -1rem;"></p>
-                                        <span id="classeid" class ="mt-5 text-danger"style="font-weight: bold;"></span>
-                                    </div>
+
                                     <div class="mb-3  fw-bold"  >
                                         <label for="exampleFormControlInput1" class="form-label">classe</label>
                                         <input type="text" class="form-control" id="classe" name="classe" placeholder="Enter le classe">
                                         <p id="img3" style="margin-bottom: -1rem;"></p>
                                         <span id="classeid" class ="mt-5 text-danger"style="font-weight: bold;"></span>
                                     </div>
-                                    <div class="mb-3  fw-bold"  >
-                                        <label for="exampleFormControlInput1" class="form-label">parents</label>
-                                        <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter le nom des parents">
-                                        <p id="img2" style="margin-bottom: -1rem;"></p>
-                                        <span id="genreid" style="color:red; font-weight: bold;"></span>
-                                    </div>
+                                  
                                     <div class="mb-3  fw-bold" >
                                         <label for="exampleFormControlTextarea1" class="form-label">Address</label>
                                         <span id="addressid"  class ="mt-5 text-danger"style="font-weight: bold;"></span>
@@ -173,8 +162,7 @@
                                         <label for="exampleFormControlInput1" class="form-label">Date naissance</label>
                                         <input type="date" class="form-control" id="datenec" name="datenec" placeholder="Enter phone">
                                         <p id="img2" style="margin-bottom: -1rem;"></p>
-                                        <span id="datenecid" style="color:red; font-weight: bold;"></span>
-                                    </div>
+                                        <span id="datenecid" style="color:red; font-weight: bold;"></span>                                   </div>
                                     <div class="mb-3  fw-bold"  >
                                         <label for="exampleFormControlInput1" class="form-label">Email</label>
                                         <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">

@@ -1,3 +1,28 @@
+<?php include('../models/professeur.php');
+$error='';
+if(isset($_POST['save']))
+{
+    $test = new professeur();
+    $test->setNom($_POST['nom']);
+    $test->setGenre($_POST['genre']);
+    $test->matière=$_POST['matière'];
+    $test->phone=$_POST['phone'];
+    $test->class_prof=$_POST['class'];
+   
+   
+    $test->insert();
+}
+  
+if(isset($_POST['find']))
+{
+    $data=new professeur();
+    $professeur=$data->view();
+    if(!$professeur)
+    {
+        $error=' <div class="alert alert-danger" role="alert"> not found!!! </div>';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,9 +47,17 @@
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
+                        
                         <div class="col-sm-6">
                             <h2 style="color: #007BFF;font-weight: bold;">Professeurs</h2>
                         </div>
+                      
+
+                        <form class="col-sm-6 input-group mb-3" method="POST" style="max-width:500px;">
+                            <a href="professeur.php" class="btn "><i class="fa fa-2x fa-home" aria-hidden="true"></i></a>
+                            <input type="text" name="search" class="form-control" placeholder="rechercher..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" name="find" type="submit" id="button-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
                         
                     </div>
                 </div>
@@ -43,58 +76,38 @@
                     </tr>
                 </thead>
                 <tbody  class="fw-bold" >
-                    <tr>
-                        <td>1</td>
-                        <td>prof x</td>
-                        <td>f</td>
-                       
-                        <td>job</td>
-                        <td>Matière</td>
-                        <td>098877665678</td>
-                        <td>
-                            <a href="#addetud" class="btn btn-outline-danger " data-toggle="modal"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></a>
-                            <a href="#addetud" class="btn btn-outline-success " data-toggle="modal"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png"/></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>prof x</td>
-                        <td>f</td>
-                        <td>class 1</td>
-                        <td>Matière</td>
-                        <td>098877665678</td>
-                        <td>
-                            <a href="#addetud" class="btn btn-outline-danger " data-toggle="modal"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></a>
-                            <a href="#addetud" class="btn btn-outline-success " data-toggle="modal"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png"/></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>prof x</td>
-                        <td>f</td>
-                        <td>class 1</td>
-                        <td>Matière</td>
-                        <td>098877665678</td>
-                        <td>
-                            <a href="#addetud" class="btn btn-outline-danger " data-toggle="modal"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></a>
-                            <a href="#addetud" class="btn btn-outline-success " data-toggle="modal"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png"/></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>prof x</td>
-                        <td>f</td>
-                        <td>class 1</td>
-                        <td>Matière</td>
-                        <td>098877665678</td>
-                        <td>
-                            <a href="#addetud" class="btn btn-outline-danger " data-toggle="modal"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></a>
-                            <a href="#addetud" class="btn btn-outline-success " data-toggle="modal"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png"/></a>
-                        </td>
-                    </tr>
-
+                <?php
+                                $prof=new professeur();
+                                $prof=$prof->view();
+                                
+                                    foreach ($prof as $professeur ) 
+                                    {
+                                        echo'
+                                        <tr>
+                                            <td>'.$professeur['Matricule'].'</td>
+                                            <td>'.$professeur['Nom_complet'].'</td>
+                                            <td>'.$professeur['Genre'].'</td>
+                                            <td>'.$professeur['class_prof'].'</td>
+                                            <td>'.$professeur['Matière'].'</td>
+                                            <td>'.$professeur['Phone'].'</td>
+                                            
+                                            <td>
+                                                <a href="../models/opération.php?id_prof_D='.$professeur['Matricule'].'" class="btn btn-outline-danger " data-toggle="modal"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></a>
+                                                <a href="../models/opération.php?id_prof_E='.$professeur['Matricule'].'" class="btn btn-outline-success " data-toggle="modal"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png"/></a>
+                                            </td>
+                                        </tr>
+                                        
+                                        ';
+                                    }
+                                   
+                                
+              
+                
+                ?>
                 </tbody>
                 </table>
+                <?php echo $error; ?>
+                
             </div>
             </div>
         
@@ -109,7 +122,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <form class="form-container" action="" method="POST" onsubmit="return validation()">  
+                    <form class="form-container"  method="POST" onsubmit="return validation()">  
                                     <div class="mb-3 fw-bold" >
                                         <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                         <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter name complet" style="margin-bottom: 32px;">
