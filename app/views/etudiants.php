@@ -1,6 +1,7 @@
 <?php include('../models/étudiant.php');
 $mode = new Etudiant();
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) 
+{
     $nom = $_POST['Nom_complet'];
     $genre = $_POST['Genre'];
     $nee = $_POST['Date_naissance'];
@@ -9,6 +10,11 @@ if (isset($_POST['submit'])) {
     $clas = $_POST['id_class'];
     $insert = $mode->ajouteretudiant($nom, $genre, $nee, $email, $parent, $clas);
 }
+if(isset($_POST['find']))
+{
+    $mode->affichetudiant();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,9 +31,7 @@ if (isset($_POST['submit'])) {
     </style>
 </head>
 <body>
-   
-        <?php include('../includes/sidebar.php'); ?>
-    
+    <?php include('../includes/sidebar.php'); ?>
     <div class="container-fluid px-5 pt-3">
         <div class="row">
             <div class="table-wrapper">
@@ -36,6 +40,11 @@ if (isset($_POST['submit'])) {
                         <div class="col-sm-6">
                             <h2 style="color:#28A745;font-weight: bold;">Etudiants</h2>
                         </div>
+                        <form class="col-sm-6 input-group mb-3" method="POST" style="max-width:500px;">
+                            <a href="etudiants.php" class="btn "><i class="fa fa-2x fa-home" aria-hidden="true"></i></a>
+                            <input type="text" name="search" class="form-control" placeholder="rechercher..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" name="find" type="submit" id="button-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
                         <!-- <div class="col-sm6">
                             <a href="#addetud" class="btn btn-outline-success btn-lg" data-toggle="modal">add etudiant <img src="https://img.icons8.com/external-smashingstocks-circular-smashing-stocks/65/000000/external-add-user-world-population-day-smashingstocks-circular-smashing-stocks.png"/ style="width: 40px;height: 40px;"></a>
                         </div> -->
@@ -48,12 +57,11 @@ if (isset($_POST['submit'])) {
                                 <th>id</th>
                                 <th>Nom complet</th>
                                 <th>Genre</th>
-                                 <th>Date naissance</th>
-                                 <th>Email</th>
-                                 <th>nom du parent</th>
-                                 <th>Adresse</th>
+                                <th>Date naissance</th>
+                                <th>Email</th>
+                                <th>nom du parent</th>
+                                <th>Adresse</th>
                                 <th>classe</th>
-                               
                                 <th>Options</th>
                             </tr>
                         </thead>
@@ -61,10 +69,10 @@ if (isset($_POST['submit'])) {
                             <?php
                             $rows = $mode->affichetudiant();
                             if ($rows) {
-                                foreach ($rows as $id=> $row) {
+                                foreach ($rows as $id => $row) {
                             ?>
                                     <tr>
-                                    <td class="text-nowrap text-center"><?php echo $id+1;?></td>
+                                        <td class="text-nowrap text-center"><?php echo $id + 1; ?></td>
                                         <td class="text-nowrap text-center"><?php echo $row[1]; ?></td>
                                         <td class="text-nowrap text-center"><?php echo $row[2]; ?></td>
                                         <td class="text-nowrap text-center"><?php echo $row[3]; ?></td>
@@ -72,10 +80,10 @@ if (isset($_POST['submit'])) {
                                         <td class="text-nowrap text-center"><?php echo $row[5]; ?></td>
                                         <td class="text-nowrap text-center"><?php echo $row[6]; ?></td>
                                         <td class="text-nowrap text-center"><?php echo $row[7]; ?></td>
-                                        
+
                                         <td class="text-nowrap text-center">
                                             <a href="edit.php?id=" class="badge bg-success">Edit</a>
-                                            <a href="../views/operation.php?id=<?php echo $row[0];?>" class="badge bg-danger">Delete</a>
+                                            <a href="../views/operation.php?id=<?php echo $row[0]; ?>" class="badge bg-danger">Delete</a>
                                         </td>
                                     </tr>
                             <?php
