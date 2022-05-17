@@ -16,16 +16,16 @@ class Etudiant extends Dbconnect
       $query = $this->GetData($query);
       $query->execute(['%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%']);
       return $query->fetchAll();
-    }
-     else {
+    } else {
       $query = "SELECT etudiants.Matricule,etudiants.Nom_completE,etudiants.Genre,etudiants.Date_naissance,etudiants.Email,parents.Nom_complet,parents.Adresse,classes.nom_class FROM etudiants,parents,classes WHERE etudiants.Matricule_parent=parents.Matricule and etudiants.id_class=classes.id; ";
       return $prepare = $this->connect()->query($query)->fetchALL();
     }
   }
-
-  public function updatetudiant($data)
+  public function updatetudiant($name, $dateN, $genre, $email, $class, $matricule)
   {
-    $query = "UPDATE etudiants SET Nom_completE ='$data[Nom_completE]',Genre='$data[Genre]' ,Date_naissance='$data[Date_naissance]',Email='$data[Email]',Matricule_parent='[Matricule_parent]',id_class='$data[id_class]' WHERE Matricule='$data[id]'";
+    $query = "UPDATE etudiants SET Nom_completE ='$name',Genre='$genre',
+    Date_naissance='$dateN',Email='$email',Matricule_parent='[Matricule_parent]',
+    id_class='$class[id_class]' WHERE Matricule='$matricule[id]'";
     if ($sql = $this->connect()->query($query)) {
       return true;
     } else {

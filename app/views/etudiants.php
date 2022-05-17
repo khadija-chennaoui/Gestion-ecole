@@ -1,7 +1,6 @@
 <?php include('../models/étudiant.php');
 $mode = new Etudiant();
-if (isset($_POST['submit'])) 
-{
+if (isset($_POST['submit'])) {
     $nom = $_POST['Nom_complet'];
     $genre = $_POST['Genre'];
     $nee = $_POST['Date_naissance'];
@@ -10,14 +9,14 @@ if (isset($_POST['submit']))
     $clas = $_POST['id_class'];
     $insert = $mode->ajouteretudiant($nom, $genre, $nee, $email, $parent, $clas);
 }
-if(isset($_POST['find']))
-{
+if (isset($_POST['find'])) {
     $mode->affichetudiant();
 }
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,6 +29,7 @@ if(isset($_POST['find']))
         }
     </style>
 </head>
+
 <body>
     <?php include('../includes/sidebar.php'); ?>
     <div class="container-fluid px-5 pt-3">
@@ -51,7 +51,7 @@ if(isset($_POST['find']))
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-striped table align-middle">
+                    <table class="table table-striped table align-middle" id="myTable">
                         <thead>
                             <tr style="background-color:#28a746b3;">
                                 <th>id</th>
@@ -82,8 +82,8 @@ if(isset($_POST['find']))
                                         <td class="text-nowrap text-center"><?php echo $row[7]; ?></td>
 
                                         <td class="text-nowrap text-center">
-                                            <a href="edit.php?id=" class="badge bg-success">Edit</a>
-                                            <a href="../views/operation.php?id=<?php echo $row[0]; ?>" class="badge bg-danger">Delete</a>
+                                            <a href="../views/operation.php?id=<?php echo $row[0]; ?>$req=updatetudiant" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
+                                            <a href="../views/operation.php?id=<?php echo $row[0]; ?>$req=deletetudiant" class="badge bg-danger">Delete</a>
                                         </td>
                                     </tr>
                             <?php
@@ -142,6 +142,92 @@ if(isset($_POST['find']))
                 </div>
             </div>
         </div>
+
+
+        <!-- model de updatetudiant -->
+
+        <div class="col-sm6 mt-3 " style="float: right;">
+            <a href="#addetud" class="btn btn-outline-primary btn-lg fw-bold" style="  color:primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter un admine <img src="https://img.icons8.com/fluency/40/000000/teacher.png" /></a>
+            <div class="modal fade" id="myModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ajouter un Admine </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-container" action="" method="POST">
+                                <div class="mb-3 fw-bold">
+                                    <input type="text" hidden class="form-control" id="matricule" name="matricule" placeholder="Enter name complet" style="margin-bottom: 32px;">
+                                </div>
+                                <div class="mb-3 fw-bold">
+                                    <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
+                                    <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter name complet" style="margin-bottom: 32px;">
+                                </div>
+                                <div class="mb-3 fw-bold">
+                                    <label for="exampleFormControlInput1" class="form-label">Genre</label>
+                                    <input type="text" class="form-control" id="gen" name="gen" placeholder="Enter name complet" style="margin-bottom: 32px;">
+                                </div>
+                                <div class="mb-3 fw-bold">
+                                    <label for="exampleFormControlInput1" class="form-label">dateN</label>
+                                    <input type="text" class="form-control" id="dateN" name="Name" placeholder="Enter name complet" style="margin-bottom: 32px;">
+                                </div>
+                                <div class="mb-3 fw-bold">
+                                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="Email" name="Email" placeholder="Enter name complet" style="margin-bottom: 32px;">
+                                </div>
+                                <div class="mb-3  fw-bold">
+                                    <label for="exampleFormControlInput1" class="form-label">Adresse</label>
+                                    <input type="text" class="form-control" id="ads" name="ads" placeholder="Enter Email">
+                                </div>
+                                <div class="mb-3  fw-bold">
+                                    <label for="exampleFormControlInput1" class="form-label">Class</label>
+                                    <input type="text" class="form-control" id="cla" name="cla" placeholder="Enter Email">
+                                </div>
+                                <div class="mb-3 fw-bold">
+                                    <label for="exampleFormControlInput1" class="form-label">Nom du parent</label>
+                                    <input type="text" class="form-control" id="parent" name="parent" placeholder="Enter name complet" style="margin-bottom: 32px;">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" name="update" class="btn btn-success mT-3">Update</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
 </body>
 
 </html>
+
+
+
+<script>
+    $(document).ready(function() {
+        $("#myTable").on('click', '.update', function() {
+            var currentRow = $(this).closest("tr");
+            colM = currentRow.find("td:eq(0)").text();
+            col0 = currentRow.find("td:eq(1)").text();
+            col1 = currentRow.find("td:eq(2)").text();
+            col3 = currentRow.find("td:eq(3)").text();
+            $('#matricule').val(colM);
+            $('#Name').val(col0);
+            $('#gen').val(col1);
+            $('#dateN').val(col3);
+            $('#Email').val(currentRow.find("td:eq(4)").text());
+            $('#parent').val(currentRow.find("td:eq(5)").text());
+            $('#ads').val(currentRow.find("td:eq(6)").text());
+            $('#cla').val(currentRow.find("td:eq(7)").text());
+
+
+        })
+    })
+</script>
