@@ -33,7 +33,7 @@ class professeur extends Personne
       $query->execute(['%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%']);
       return $query->fetchAll();
     } else {
-      $sql = "SELECT * FROM  professeurs";
+      $sql = "SELECT * FROM  professeurs ORDER BY Matricule DESC";
       return $prepare = $this->connect()->query($sql)->fetchALL();
     }
   }
