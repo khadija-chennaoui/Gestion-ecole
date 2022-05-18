@@ -21,11 +21,12 @@ class Etudiant extends Dbconnect
       return $prepare = $this->connect()->query($query)->fetchALL();
     }
   }
-  public function updatetudiant($name, $dateN, $genre, $email, $class, $matricule)
+  public function updatetudiant($name, $dateN, $genre, $email, $class,$matp, $matricule)
   {
+
     $query = "UPDATE etudiants SET Nom_completE ='$name',Genre='$genre',
-    Date_naissance='$dateN',Email='$email',Matricule_parent='[Matricule_parent]',
-    id_class='$class[id_class]' WHERE Matricule='$matricule[id]'";
+    Date_naissance='$dateN',Email='$email',
+    id_class='$class' ,Matricule_parent='$matp'WHERE Matricule='$matricule'";
     if ($sql = $this->connect()->query($query)) {
       return true;
     } else {
@@ -40,5 +41,15 @@ class Etudiant extends Dbconnect
     } else {
       return false;
     }
+  }
+
+  public function affiche(){
+    $sql="SELECT * FROM  parents";
+         return $prepare=$this->connect()->query($sql)->fetchALL();
+  }
+
+  public function afficheClass(){
+    $sql="SELECT * FROM  classes";
+         return $prepare=$this->connect()->query($sql)->fetchALL();
   }
 }
