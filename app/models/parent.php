@@ -13,11 +13,20 @@ require('personne.php');
        }catch(PDOException $e){ return $e->getMessage();} 
     }
 
-    public function Afficher(){
-      try{
-        $sql=$this->connect()->query("select * from parents ");
-        return $sql->fetchAll();
-       }catch(PDOException $e){ return $e->getMessage();} 
+    public function Afficher()
+    {
+     if(isset($_POST['search']))
+     {
+         $search=$_POST['search'];
+        $query="SELECT * FROM parents WHERE Matricule LIKE ? OR Nom_complet LIKE ? OR Genre LIKE ? OR Job LIKE ? OR Adresse LIKE ? OR Phone LIKE ?" ;
+        $query=$this->GetData($query);
+        $query->execute(['%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%']);
+        return $query->fetchAll();
+      }else{
+         $sql="SELECT * FROM  parents";
+         return $prepare=$this->connect()->query($sql)->fetchALL();
+      }
+ 
     }
     public function Delete(){
       try{
@@ -29,31 +38,20 @@ require('personne.php');
         return $sql=$this->GetData("update parents set Nom_complet=?,	Genre=?,Job=?,Adresse=? ,Phone=? where Matricule =?")->execute([$this->Nom,$this->Genre,$this->job,$this->Adresse,$this->phone,$this->Matricule]);
        }catch(PDOException $e){ return $e->getMessage();} 
     }
-    public function Selectone(){
+    public function search($search){
       try{
-        $result= $this->GetData("select * from parents where Matricule =?");
-        $result->execute([$this->Matricule ]);
+        $result= $this->GetData("select * from parents where Nom_complet LIKE ? or Genre LIKE ?
+        Job LIKE ? or Adresse LIKE ? or Phone LIKE ? ");
+        $result->execute(['%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%' ]);
         return $result->fetch();
        }catch(PDOException $e){ return $e->getMessage();} 
     }
 
+ 
 
 }
 
 
-// $test = new Parents();
 
-// $test->setMatricule(1);
-// $test->Delete();
-
-// var_dump($test->Afficher());
-// $test->setMatricule(2);
-// $test->setNom("admin");
-// $test->setGenre("M");
-// $test->job="not";
-// $test->setAdresse("123");
-// $test->phone="06";
-// $test->Ajouter();
-// $test->Update();
 
 

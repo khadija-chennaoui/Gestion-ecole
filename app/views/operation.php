@@ -9,8 +9,20 @@ if(isset($_POST['bntupdate'])){
     $test->setAdresse($_POST['adres']);
     $test->phone=$_POST['Phone'];
     if($test->Update()){
-    header('location:../views/testparent.php');
+    header('location:../views/parent.php');
     }
 
 }
+
+if(isset($_GET['id'])){
+    
+  if($_GET['req']=='deleteparent'){
+    $test->setMatricule($_GET['id']);
+    $test->delete();
+    header('location:../views/parent.php');
+
+
+  }  
+    } 
+    ?>
 
