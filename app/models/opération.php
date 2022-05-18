@@ -11,16 +11,16 @@ if(isset($_GET['id_prof_D']))
     header('location:../views/professeur.php');
 }
 
-if(isset($_GET['id_prof_E']))
-{   
-    $pro=$_GET['id_prof_E'];
-    $sql="SELECT * FROM professeurs WHERE Matricule=$pro";
-    $new=new Dbconnect();
-    $prepare=$new->connect()->query($sql)->fetchAll();
-    
-    echo $prepare['Genre'];
+if(isset($_POST['save2']))
+{
+    $id=$_POST['matricule'];
+    $Nom=$_POST['Name'];
+    $Genre=$_POST['gnr'];
+    $phone=$_POST['tele'];
+    $matière=$_POST['Matier'];
+    $class_prof=$_POST['cl'];
 
-}
+    $edit= new professeur();
+    $edit->editProfessur($id,$Nom,$Genre,$matière,$phone,$class_prof);
 
-
-?>
+} 

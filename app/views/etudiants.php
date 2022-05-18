@@ -7,16 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>etudiant</title>
     <style>
-<<<<<<< HEAD
-       
-     .table tbody tr:hover td, .table tbody tr:hover th {
-    background-color: #28a74646;}
-=======
-        .table tbody tr:hover td,
+         .table tbody tr:hover td,
         .table tbody tr:hover th {
             background-color: #28a74646;
         }
->>>>>>> d653e3f8957a867d1b609e602a065dad23e4076c
+
+        =======.table tbody tr:hover td,
+        .table tbody tr:hover th {
+            background-color: #28a74646;
+        }
+
+        
     </style>
 </head>
 
@@ -136,57 +137,7 @@
             </div>
 
         </div>
-<<<<<<< HEAD
-         <div class="col-sm6 mt-3 " style="float: right;">
-         <a href="#addetud" class="btn btn-outline-success btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">add etudiant <img src="https://img.icons8.com/external-smashingstocks-circular-smashing-stocks/65/000000/external-add-user-world-population-day-smashingstocks-circular-smashing-stocks.png"/ style="width: 40px;height: 40px;"></a>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add etudiant</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    <form class="form-container" action="models/étudiant.php method="POST" onsubmit="return validation()">  
-                                    <div class="mb-3 fw-bold" >
-                                        <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
-                                        <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter name complet" style="margin-bottom: 32px;">
-                                        <p id="img" style="margin-bottom: -1rem; width: 10px;"></p>
-                                        <span id="nomid" class ="mt-5 text-danger"style="font-weight: bold;"></span>
-                                    </div>
-
-                                    <div class="mb-3  fw-bold"  >
-                                        <label for="exampleFormControlInput1" class="form-label">classe</label>
-                                        <input type="text" class="form-control" id="classe" name="classe" placeholder="Enter le classe">
-                                        <p id="img3" style="margin-bottom: -1rem;"></p>
-                                        <span id="classeid" class ="mt-5 text-danger"style="font-weight: bold;"></span>
-                                    </div>
-                                  
-                                    <div class="mb-3  fw-bold" >
-                                        <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                                        <span id="addressid"  class ="mt-5 text-danger"style="font-weight: bold;"></span>
-                                        <textarea class="form-control" id="adress" name="adres" rows="3"></textarea>
-                                        <p id="img4" style="margin-bottom: -1rem;"></p> <span id="addid" style="color:red; font-weight: bold;"></span>
-                                    </div>
-                                    <div class="mb-3  fw-bold"  >
-                                        <label for="exampleFormControlInput1" class="form-label">Date naissance</label>
-                                        <input type="date" class="form-control" id="datenec" name="datenec" placeholder="Enter phone">
-                                        <p id="img2" style="margin-bottom: -1rem;"></p>
-                                        <span id="datenecid" style="color:red; font-weight: bold;"></span>                                   </div>
-                                    <div class="mb-3  fw-bold"  >
-                                        <label for="exampleFormControlInput1" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
-                                        <p id="img2" style="margin-bottom: -1rem;"></p>
-                                        <span id="emailid" style="color:red; font-weight: bold;"></span>
-                                    </div>
-                                    <div class="mb-3  fw-bold"  >
-                                        <label for="exampleFormControlInput1" class="form-label">	nom du parent</label>
-                                        <input type="text" class="form-control" id="nompere" name="nompere" placeholder="Enter name de parent">
-                                        <p id="img2" style="margin-bottom: -1rem;"></p>
-                                        <span id="nompereid" style="color:red; font-weight: bold;"></span>
-                                    </div>
-=======
-        <div class="col-sm6 mt-3 " style="float: right;">
+        <<<<<<< HEAD <div class="col-sm6 mt-3 " style="float: right;">
             <a href="#addetud" class="btn btn-outline-success btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">add etudiant <img src="https://img.icons8.com/external-smashingstocks-circular-smashing-stocks/65/000000/external-add-user-world-population-day-smashingstocks-circular-smashing-stocks.png" / style="width: 40px;height: 40px;"></a>
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -196,48 +147,98 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form class="form-container" action="" method="POST" onsubmit="return validation()">
+                            <form class="form-container" action="models/étudiant.php method=" POST" onsubmit="return validation()">
                                 <div class="mb-3 fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                     <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter name complet" style="margin-bottom: 32px;">
-                                </div>
-                                <div class="mb-3  fw-bold">
-                                    <label for="exampleFormControlInput1" class="form-label">Classe</label>
-                                    <input type="text" class="form-control" id="classe" name="classe" placeholder="Enter classe">
+                                    <p id="img" style="margin-bottom: -1rem; width: 10px;"></p>
+                                    <span id="nomid" class="mt-5 text-danger" style="font-weight: bold;"></span>
                                 </div>
 
                                 <div class="mb-3  fw-bold">
-                                    <label for="exampleFormControlInput1" class="form-label">Nom du parent</label>
-                                    <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter le nom des parents">
+                                    <label for="exampleFormControlInput1" class="form-label">classe</label>
+                                    <input type="text" class="form-control" id="classe" name="classe" placeholder="Enter le classe">
+                                    <p id="img3" style="margin-bottom: -1rem;"></p>
+                                    <span id="classeid" class="mt-5 text-danger" style="font-weight: bold;"></span>
                                 </div>
+
                                 <div class="mb-3  fw-bold">
                                     <label for="exampleFormControlTextarea1" class="form-label">Address</label>
                                     <span id="addressid" class="mt-5 text-danger" style="font-weight: bold;"></span>
                                     <textarea class="form-control" id="adress" name="adres" rows="3"></textarea>
+                                    <p id="img4" style="margin-bottom: -1rem;"></p> <span id="addid" style="color:red; font-weight: bold;"></span>
                                 </div>
                                 <div class="mb-3  fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Date naissance</label>
                                     <input type="date" class="form-control" id="datenec" name="datenec" placeholder="Enter phone">
+                                    <p id="img2" style="margin-bottom: -1rem;"></p>
+                                    <span id="datenecid" style="color:red; font-weight: bold;"></span>
                                 </div>
                                 <div class="mb-3  fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Email</label>
                                     <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+                                    <p id="img2" style="margin-bottom: -1rem;"></p>
+                                    <span id="emailid" style="color:red; font-weight: bold;"></span>
                                 </div>
->>>>>>> d653e3f8957a867d1b609e602a065dad23e4076c
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" name="save" class="btn btn-success mT-3">Save</button>
+                                <div class="mb-3  fw-bold">
+                                    <label for="exampleFormControlInput1" class="form-label"> nom du parent</label>
+                                    <input type="text" class="form-control" id="nompere" name="nompere" placeholder="Enter name de parent">
+                                    <p id="img2" style="margin-bottom: -1rem;"></p>
+                                    <span id="nompereid" style="color:red; font-weight: bold;"></span>
                                 </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
+                                =======
+                                <div class="col-sm6 mt-3 " style="float: right;">
+                                    <a href="#addetud" class="btn btn-outline-success btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">add etudiant <img src="https://img.icons8.com/external-smashingstocks-circular-smashing-stocks/65/000000/external-add-user-world-population-day-smashingstocks-circular-smashing-stocks.png" / style="width: 40px;height: 40px;"></a>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Add etudiant</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="form-container" action="" method="POST" onsubmit="return validation()">
+                                                        <div class="mb-3 fw-bold">
+                                                            <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
+                                                            <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter name complet" style="margin-bottom: 32px;">
+                                                        </div>
+                                                        <div class="mb-3  fw-bold">
+                                                            <label for="exampleFormControlInput1" class="form-label">Classe</label>
+                                                            <input type="text" class="form-control" id="classe" name="classe" placeholder="Enter classe">
+                                                        </div>
 
-                        </div>
-                    </div>
-                </div>
+                                                        <div class="mb-3  fw-bold">
+                                                            <label for="exampleFormControlInput1" class="form-label">Nom du parent</label>
+                                                            <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter le nom des parents">
+                                                        </div>
+                                                        <div class="mb-3  fw-bold">
+                                                            <label for="exampleFormControlTextarea1" class="form-label">Address</label>
+                                                            <span id="addressid" class="mt-5 text-danger" style="font-weight: bold;"></span>
+                                                            <textarea class="form-control" id="adress" name="adres" rows="3"></textarea>
+                                                        </div>
+                                                        <div class="mb-3  fw-bold">
+                                                            <label for="exampleFormControlInput1" class="form-label">Date naissance</label>
+                                                            <input type="date" class="form-control" id="datenec" name="datenec" placeholder="Enter phone">
+                                                        </div>
+                                                        <div class="mb-3  fw-bold">
+                                                            <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+                                                        </div>
+                                                        >>>>>>> d653e3f8957a867d1b609e602a065dad23e4076c
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="submit" name="save" class="btn btn-success mT-3">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
 
-            </div>
-        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
 
 </body>
 

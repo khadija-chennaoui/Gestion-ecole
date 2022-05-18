@@ -58,3 +58,16 @@ background-repeat: no-repeat;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.navbar>.container-fluid .navbar-brand {
+  margin-left: 1451px !important;
+}
+
+
+.pe-3 {
+  padding-right: 2rem!important;
+}
+
+.offcanvas-body {
+  padding: 4rem 7rem !important;
+}
