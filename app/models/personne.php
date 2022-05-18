@@ -1,4 +1,5 @@
 <?
+include('Connection.php');
  class Personne extends Dbconnect{
 
 private $Matricule;
