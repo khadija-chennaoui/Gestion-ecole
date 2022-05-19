@@ -1,6 +1,7 @@
 <?php
-//  require_once('views/includes/sidebar.php') ;
 include('./views/includes/script.php');
+//  require_once('views/includes/sidebar.php') ;
+
 require_once('./autoload.php');
 
 
