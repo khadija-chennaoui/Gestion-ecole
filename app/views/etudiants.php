@@ -186,9 +186,8 @@ if (isset($_POST['find'])) {
                                     <label for="exampleFormControlInput1" class="form-label">Genre</label>
                                     <!-- <input type="text" class="form-control" id="gen" name="gen" placeholder="Enter name complet" style="margin-bottom: 32px;"> -->
                                     <select name="gen" class="form-control" id="gen" >
-                                        <option  value="admine edudient"> </option>
-                                        <option value="admine edudient">Femme</option>
-                                        <option value="admine gestion">Homme</option>
+                                        <option value="Femme">Femme</option>
+                                        <option value="Homme">Homme</option>
                                     </select>
                                 </div>
                                 <div class="mb-3 fw-bold">
@@ -215,14 +214,14 @@ if (isset($_POST['find'])) {
                                 </div>
                                 <div class="mb-3  fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Class</label><br>
-                                    <select class="form-control" type="text" id="cla">
+                                    <select class="form-control" type="text" id="cla" name="cla">
                                         <?php
                                         $rows = $mode->afficheClass();
                                         if ($rows) {
                                             foreach ($rows as  $row) {
                                         ?>
-                                                <!-- <option value="<?php echo $row[1]; ?>" selected><?php echo $row[1]; ?> </option> hada dar lina double  -->
-                                                <option name="cla" value="<?php echo $row[0]; ?>" selected><?php echo $row[1]; ?> </option>
+                                              
+                                                <option  value="<?php echo $row[0]; ?>" ><?php echo $row[1]; ?> </option>
                                         <?php
                                             }
                                         } ?>
