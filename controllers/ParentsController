@@ -1,7 +1,0 @@
-<?php 
-class ParentsController{
-    function showParentsLIs(){
-        $list=ParentsModel::getAll();
-        include "../views/list_parents_view.php";
-    }    
-}
