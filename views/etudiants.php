@@ -14,7 +14,6 @@
 </head>
 <body>
     <nav>
-    <?php include('../includes/sidebar.php') ?>
     </nav>
     <div class="container-fluid px-5 pt-3">
         <div class="row">

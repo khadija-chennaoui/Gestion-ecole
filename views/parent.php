@@ -1,18 +1,15 @@
  
- <?php require_once('../models/parent.php')?>
+ 
+  <?php 
+       if(isset($_POST['saveparent']) )
+       {
+
+         $parentcontrol = new AdministrateurController();
+         $parent=$parentcontrol->addparent();
+     }?> 
+
  <?php
- if(isset($_POST['saveparent'])){
-    $test = new Parents();
 
-    
-    $test->setNom($_POST['nom']);
-    $test->setGenre($_POST['genre']);
-    $test->job=$_POST['Job'];
-    $test->setAdresse($_POST['adres']);
-    $test->phone=$_POST['Phone'];
-    $test->Ajouter();
-
- }
  if(isset($_POST['find']))
  {
      $find= new Parents();
@@ -37,11 +34,64 @@
 </head>
 <body>
   
-   <?php include('../includes/sidebar.php')?>
+   <!-- <?php ?> -->
+
+ <nav class="navbar navbar-light ">
+  <div class="container-fluid" >
+    <img src="../views/img/logo.png" style="max-width:70px;" alt="">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+          
+    <div class="offcanvas offcanvas-start rounded" style="background-color:black;" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <img src="logo.png" style="max-width:100px;" alt="">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="dropdown mt-3">
+              
+              <ul class="navbar-nav  justify-content-end flex-grow-1 pe-3 btn-group"  role="group" aria-label="Basic radio toggle button group">
+                  <li class="nav-item btn  btn-outline-light mb-2 rounded" style ="display: flex;justify-content: flex-start" >
+                    <a class="nav-link mask"  aria-current="page" href="../views/statistique.php" style="  COLOR: grey; FONT-SIZE: unset;FONT-WEIGHT: bold; font-family: monospace;">
+                    <i class="fa  fa-3x fa-home " aria-hidden="true"></i><span class="fs-3"  style="margin-left: 60px;" > Home</span></a>
+                  </li>
+                  <li class="nav-item btn btn-outline-light mb-2 rounded"  style ="display: flex;justify-content: flex-start">
+                    <a class="nav-link"  href="../views/professeur.php" style="  COLOR: grey; FONT-SIZE: unset;FONT-WEIGHT: bold; font-family: monospace;">
+                    <i class="fa fa-male  fa-3x" aria-hidden="true" ></i><span class="fs-3"  style="margin-left: 60px;" > Professeurs</span></a>
+                  </li>
+                  <li class="nav-item btn btn-outline-light mb-2 rounded " style ="display: flex;justify-content: flex-start">
+                    <a class="nav-link "  href="../views/etudiants.php"style="  COLOR: grey; FONT-SIZE: unset;FONT-WEIGHT: bold; font-family: monospace;">
+                    <i class="fa fa-3x fa-users" aria-hidden="true" ></i><span class="fs-3"  style="margin-left: 60px;">Apprennants</span> </a>
+                  </li>
+                  <li class="nav-item btn btn-outline-light mb-2 rounded " style ="display: flex;justify-content: flex-start" >
+                    <a class="nav-link "  href="../views/parent.php"style="  COLOR: grey; FONT-SIZE: unset;FONT-WEIGHT: bold; font-family: monospace;">
+                    <i class="fa  fa-3x fa-address-card" aria-hidden="true" ></i><span class="fs-3"  style="margin-left: 60px;">Parents</span> </a>
+                  </li>
+                  <li class="nav-item btn btn-outline-light mb-2 rounded " style ="display: flex;justify-content: flex-start">
+                    <a class="nav-link "  href="../views/Administrateur.php"style="  COLOR: grey; FONT-SIZE: unset;FONT-WEIGHT: bold; font-family: monospace;">
+                    <i class="fa fa-3x fa-user" aria-hidden="true"></i><span class="fs-3"  style="margin-left: 60px;">Admin</span> </a>
+                  </li>
+                
+                  <li class="nav-item btn btn-outline-light   rounded" style="margin-top:65%;" style ="display: flex;justify-content: flex-start">
+                    <a class="nav-link  "  href="#" style="  COLOR: grey; FONT-SIZE: unset;FONT-WEIGHT: bold; font-family: monospace;">
+                    <i class="fa fa-3x fa-sign-out" aria-hidden="true" ></i><span class="fs-3"  style="margin-left: 60px;">logout</span> </a>
+                  </li>
+                </ul>
+          </div>
+      
+       </div>
+    </div>
+ </div>
+</nav>
 
 
+
+<hr>
    <div class="container-fluid px-5 pt-3">
-       <div class="row">
+    
+         <div class="row">
            <div class="table-wrapper">
                <div class="table-title">
                    <div class="row">
@@ -52,13 +102,16 @@
                       
                    </div>
                </div>
+            <div class="d-flex align-items-baseline  justify-content-between">
                <form class="col-sm-6 input-group mb-3 mt-5" method="POST" style="max-width:500px;">
-                            <a href="parent.php" class="btn "><i class="fa fa-2x fa-home" aria-hidden="true"></i></a>
+                            <a href="parent" class="btn "><i class="fa fa-2x fa-home" aria-hidden="true"></i></a>
                             <input type="text" name="search" class="form-control" placeholder="rechercher..." aria-label="Recipient's username" aria-describedby="button-addon2">
                             <button class="btn btn-outline-secondary" name="find" type="submit" id="button-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
-                        </form>
+                </form>
+                 <a href="#addetud" class="btn btn-outline-warning btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-bottom: 50px;">Ajouter les parents <img src="https://img.icons8.com/emoji/40/000000/family-.png"/></a>
+          </div>
                <div class="table-responsive">
-               <table class="table table-striped table align-middle   " id="myTable">
+               <table class="table table-striped table align-middle" id="myTable">
                <thead>
                 
                    <tr style="background-color:#fd7d1487; height: 53px;">
@@ -73,9 +126,9 @@
                    </tr>
                </thead>
                <tbody  class="fw-bold" >
-               <?php $test = new Parents();
-               $rest=$test->Afficher();
-                   foreach(    $rest as $x => $rows){
+               <?php $parentcontrol = new AdministrateurController();
+                     $parent=$parentcontrol->getAllParent();
+                   foreach(    $parent as $x => $rows){
                        
                      
                    ?>
@@ -88,10 +141,9 @@
                        <td data-target="job"><?= $rows['Job']?></td>
                        <td data-target="adrs"><?= $rows['Adresse']?></td>
                        <td data-target="phone"><?= $rows['Phone']?></td>
-                       <td>
-                       <a href="#addetud" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png"/></a>
-
-                           <a href="operation.php?id=<?= $rows['Matricule']?>&req=deleteparent" class="btn btn-outline-danger " data-toggle="modal"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></a>
+                       <td class="d-flex  align-items-start">
+                       <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
+                       <form action="operation" method="POST" ><button type="submit" name ="deletparent" class="btn btn-outline-danger " style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="Matricule" value="<?= $rows['Matricule']?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
                        </td>
                    </tr>
                       <?php }?>
@@ -100,7 +152,6 @@
                </table>
            </div>
            <div class="col-sm6 mt-3 " style="float: right;">
-        <a href="#addetud" class="btn btn-outline-warning btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter les parents <img src="https://img.icons8.com/emoji/40/000000/family-.png"/></a>
        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
            <div class="modal-dialog">
                <div class="modal-content">
@@ -169,7 +220,7 @@
                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                    </div>
                    <div class="modal-body">
-                   <form class="form-container" action="operation.php" method="POST" >  
+                   <form class="form-container" action="operation" method="POST" >  
                    <div class="mb-3 fw-bold" >
                                        <input type="text" hidden class="form-control" id="matricule" name="matricule"  style="margin-bottom: 32px;">
                                        <p id="img" style="margin-bottom: -1rem; width: 10px;"></p>

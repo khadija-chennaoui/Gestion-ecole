@@ -1,11 +1,13 @@
 <?php 
-include('Connection.php');
+include('database/Connection.php');
+
 class Personne extends Dbconnect{
 
 public $Matricule;
 public $Nom;
 public $Genre;
 public $Adresse;
+
 
 public function getMatricule(){
     return $this->Matricule;

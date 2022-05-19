@@ -16,7 +16,7 @@
                 <h1 class="text-light " style="FONT-SIZE: XXX-LARGE;">404</h1>
                 <h2 class="text-light">The Page You Requested Could Not Be Found</h2>
             </div>
-            <div class="mt-5"><img src="../views/img/Premium Vector _ 404 error web template with mad cat.png" alt="" width="700px"></div>
+            <div class="mt-5"><img src="views/img/Premium Vector _ 404 error web template with mad cat.png" alt="" width="700px"></div>
       </div>
  
 </body>

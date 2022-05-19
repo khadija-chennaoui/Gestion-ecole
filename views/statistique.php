@@ -13,7 +13,6 @@
 <div class="container-fluid">
     <div class="d-block">
         
-    <?php include('../includes/sidebar.php') ?>
         <div class="row row-cols-1 row-cols-md-3 g-4 ">
             <div class="col">
                 <div class="card" class="contenant" style="width:258px;margin:12%;padding:0%;">
