@@ -154,9 +154,9 @@ if (isset($_POST['find'])) {
                                     <button type="submit" name="submit" class="btn btn-success mT-">Save</button>
                                 </div>
                             </form>
-                            <script>
+                            <!-- <script>
                             //     $('#form1').parsley();
-                            // </script>
+                            // </script> -->
                         </div>
                         <div class="modal-footer">
                         </div>
@@ -184,7 +184,12 @@ if (isset($_POST['find'])) {
                                 </div>
                                 <div class="mb-3 fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Genre</label>
-                                    <input type="text" class="form-control" id="gen" name="gen" placeholder="Enter name complet" style="margin-bottom: 32px;">
+                                    <!-- <input type="text" class="form-control" id="gen" name="gen" placeholder="Enter name complet" style="margin-bottom: 32px;"> -->
+                                    <select name="gen" class="form-control" id="gen" >
+                                        <option  value="admine edudient"> </option>
+                                        <option value="admine edudient">Femme</option>
+                                        <option value="admine gestion">Homme</option>
+                                    </select>
                                 </div>
                                 <div class="mb-3 fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">dateN</label>
@@ -202,7 +207,6 @@ if (isset($_POST['find'])) {
                                         if ($rows) {
                                             foreach ($rows as  $row) {
                                         ?>
-                                                <option value="admine edudient"> </option>
                                                 <option value="<?php echo $row[0]; ?>"><label id="parent"><?php echo $row[1]; ?> </label></option>
                                         <?php
                                             }
@@ -217,7 +221,7 @@ if (isset($_POST['find'])) {
                                         if ($rows) {
                                             foreach ($rows as  $row) {
                                         ?>
-                                                <option value="<?php echo $row[1]; ?>" selected><?php echo $row[1]; ?> </option>
+                                                <!-- <option value="<?php echo $row[1]; ?>" selected><?php echo $row[1]; ?> </option> hada dar lina double  -->
                                                 <option name="cla" value="<?php echo $row[0]; ?>" selected><?php echo $row[1]; ?> </option>
                                         <?php
                                             }
@@ -234,7 +238,6 @@ if (isset($_POST['find'])) {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 </body>
