@@ -1,5 +1,4 @@
 <?php 
- require("../models/Administrateur.php");
  $nom="";
  $prenom="";
  $role="";
