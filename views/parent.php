@@ -99,10 +99,12 @@
                           
                                    <div class="mb-3  fw-bold"  >
                                        <label for="exampleFormControlInput1" class="form-label">Genre</label>
-                                       <input type="text" class="form-control"  name="genre" placeholder="Enter le Genre">
-                                       <p id="img2" style="margin-bottom: -1rem;"></p>
-                                       <span id="genreid" style="color:red; font-weight: bold;"></span>
+                                       <select class="form-control" name="genre" >
+                                        <option value="Femme">Femme </option>
+                                        <option value="Homme" selected>Homme </option>
+                                    </select>
                                    </div>
+                                  
                           
                                    <div class="mb-3  fw-bold"  >
                                        <label for="exampleFormControlInput1" class="form-label">Job</label>
@@ -164,11 +166,12 @@
                           
                                    <div class="mb-3  fw-bold"  >
                                        <label for="exampleFormControlInput1" class="form-label">Genre</label>
-                                       <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter le Genre">
-                                       <p id="img2" style="margin-bottom: -1rem;"></p>
-                                       <span id="genreid" style="color:red; font-weight: bold;"></span>
+                                       <select class="form-control" id="genre"  name="genre" >
+                                        <option value="Femme">Femme </option>
+                                        <option value="Homme" selected>Homme </option>
+                                    </select>
                                    </div>
-                          
+                                   
                                    <div class="mb-3  fw-bold"  >
                                        <label for="exampleFormControlInput1" class="form-label">Job</label>
                                        <input type="text" class="form-control" id="Job" name="Job" placeholder="Enter le Job">
