@@ -17,6 +17,7 @@ class AdministrateurController{
       $p->setAdresse($_POST['adres']);
       $p->phone=$_POST['Phone'];
       if($p->Ajouter()){
+        header('location:parent');
       }
       }
     }

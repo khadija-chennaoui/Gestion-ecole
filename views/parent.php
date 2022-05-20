@@ -1,19 +1,4 @@
- 
- 
-  <?php 
-      
-         $parentcontrol = new AdministrateurController();
-         $parent=$parentcontrol->addparent();
-     ?> 
 
- <?php
-
- if(isset($_POST['find']))
- {
-     $find= new Parents();
-     $find->Afficher();
- }
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,13 +16,7 @@
    </style>
 </head>
 <body>
-  
-   <!-- <?php ?> -->
-
  
-
-
-
 <hr>
    <div class="container-fluid px-5 pt-3">
     
@@ -110,7 +89,7 @@
                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                    </div>
                    <div class="modal-body">
-                   <form class="form-container" action="" method="POST" onsubmit="return validation()">  
+                   <form class="form-container" action="operation" method="POST" onsubmit="return validation()">  
                                    <div class="mb-3 fw-bold" >
                                        <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                        <input type="text" class="form-control"  name="nom" placeholder="Enter name complet" style="margin-bottom: 32px;">
