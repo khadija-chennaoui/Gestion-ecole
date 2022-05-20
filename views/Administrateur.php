@@ -52,9 +52,7 @@
     </style>
 </head>
 <body>
-    <nav>
-    <?php include('../includes/sidebar.php') ?>
-    </nav>
+  
     
     <div class="container-fluid px-5 pt-3">
     <form class="col-sm-6 input-group mb-3" method="POST" style="max-width:500px;">

@@ -1,10 +1,9 @@
 <?php
 include('./views/includes/script.php');
-//  require_once('views/includes/sidebar.php') ;
-
+if(basename($_SERVER['REQUEST_URI'])=="parent" || basename($_SERVER['REQUEST_URI'])=="professeur" || basename($_SERVER['REQUEST_URI'])=="statistique"){
+    include('views/includes/sidebar.php') ;
+}
 require_once('./autoload.php');
-
-
 require_once('./controllers/HomeController.php');
 
 $home =new HomeController();

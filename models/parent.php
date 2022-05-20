@@ -16,25 +16,25 @@
 
     public function Afficher()
     {
-     if(isset($_POST['search']))
-     {
-         $search=$_POST['search'];
-        $query="SELECT * FROM parents WHERE Matricule LIKE ? OR Nom_complet LIKE ? OR Genre LIKE ? OR Job LIKE ? OR Adresse LIKE ? OR Phone LIKE ?" ;
-        $query=$this->GetData($query);
-        $query->execute(['%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%']);
-        return $query->fetchAll();
-        $query->close;
-      }else{
+      try{
          $sql="SELECT * FROM  parents";
          return $prepare=$this->connect()->query($sql)->fetchALL();
+        }catch(PDOException $e){ return $e->getMessage();} 
       }
  
+    public function search($search){
+      try{
+         $query="SELECT * FROM parents WHERE Matricule LIKE ? OR Nom_complet LIKE ? OR Genre LIKE ? OR Job LIKE ? OR Adresse LIKE ? OR Phone LIKE ?" ;
+         $query=$this->GetData($query);
+         $query->execute(['%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%']);
+         return $query->fetchAll();
+         $query->close;
+        }catch(PDOException $e){ return $e->getMessage();} 
+
     }
     public function Delete(){
-      try{
-        
-        return $sql=$this->GetData("delete from parents where Matricule =?")->execute([$this->Matricule]);
-        
+      try{ 
+        return $sql=$this->GetData("delete from parents where Matricule =?")->execute([$this->Matricule]); 
       }catch(PDOException $e){ return $e->getMessage();} 
     }
     public function Update(){
@@ -45,14 +45,7 @@
       $sql->close;
       }catch(PDOException $e){ return $e->getMessage();} 
     }
-    public function search($search){
-      try{
-        $result= $this->GetData("select * from parents where Nom_complet LIKE ? or Genre LIKE ?
-        Job LIKE ? or Adresse LIKE ? or Phone LIKE ? ");
-        $result->execute(['%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%' ]);
-        return $result->fetch();
-       }catch(PDOException $e){ return $e->getMessage();} 
-    }
+
 
  
 

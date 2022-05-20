@@ -29,7 +29,6 @@ if (isset($_POST['find'])) {
     </style>
 </head>
 <body>
-    <?php include('../includes/sidebar.php'); ?>
     <div class="container-fluid px-5 pt-3">
         <div class="row">
             <div class="table-wrapper">

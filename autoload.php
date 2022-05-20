@@ -1,13 +1,10 @@
 <?php
 if( basename($_SERVER['REQUEST_URI'])=="parent" || basename($_SERVER['REQUEST_URI'])=="operation"){
 require_once('models/parent.php');
-
 }elseif(basename($_SERVER['REQUEST_URI'])=="professeur"|| basename($_SERVER['REQUEST_URI'])=="operation"){
     require_once('models/professeur.php');
-
 }elseif(basename($_SERVER['REQUEST_URI'])=="etudiants"|| basename($_SERVER['REQUEST_URI'])=="operation"){
     require_once('models/étudiant.php');
-
 }
 
 

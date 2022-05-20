@@ -4,12 +4,12 @@
 class AdministrateurController{
 
     public function getAllParent(){
-      $parent=new Parents();
-
-      return $parent->Afficher();
+         $parent=new Parents();
+         if(isset($_POST['search'])) return $parent-> search($_POST['search']);
+         else return $parent->Afficher();
     }
     public function addparent(){
-
+      if(isset($_POST['saveparent']) ){
       $p = new Parents(); 
       $p->setNom($_POST['nom']);
       $p->setGenre($_POST['genre']);
@@ -17,17 +17,21 @@ class AdministrateurController{
       $p->setAdresse($_POST['adres']);
       $p->phone=$_POST['Phone'];
       if($p->Ajouter()){
-
+      }
       }
     }
     public function deleteparent(){
-
-      $p = new Parents();
+      if(isset($_POST['deletparent'])){
+         $p = new Parents();
          $p->setMatricule($_POST['Matricule']);
-         $p->delete();
+         if($p->delete()){
+          header('location:parent');
+         }
+        } 
     }
 
    function updateparent(){
+    if(isset($_POST['bntupdate'])){
     $p = new Parents();
     $p->setMatricule($_POST['matricule']);
         $p->setNom($_POST['nom']);
@@ -36,7 +40,9 @@ class AdministrateurController{
         $p->setAdresse($_POST['adres']);
         $p->phone=$_POST['Phone'];
         if($p->Update()){
+          header('location:parent');
         }
+      }
    }
     // public function getAllstudent(){
     //   include('models/étudiant.php');
