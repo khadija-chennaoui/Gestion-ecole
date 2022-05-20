@@ -1,6 +1,6 @@
 <?php
 include('./views/includes/script.php');
-if(basename($_SERVER['REQUEST_URI'])=="parent" || basename($_SERVER['REQUEST_URI'])=="professeur" || basename($_SERVER['REQUEST_URI'])=="statistique"){
+if(basename($_SERVER['REQUEST_URI'])=="parent" || basename($_SERVER['REQUEST_URI'])=="professeur" || basename($_SERVER['REQUEST_URI'])=="statistique"||basename($_SERVER['REQUEST_URI'])=="Administrateur"||basename($_SERVER['REQUEST_URI'])=="etudiants"){
     include('views/includes/sidebar.php') ;
 }
 require_once('./autoload.php');
