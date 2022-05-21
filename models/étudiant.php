@@ -1,6 +1,5 @@
 <?php
 
-include('models/personne.php');
 
 class Etudiant extends Personne
 {

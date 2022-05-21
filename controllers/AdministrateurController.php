@@ -73,6 +73,12 @@ class AdministrateurController{
 
 
     public function getAlladmin(){
+      $admines=new Administrateur();
+
+      $admin=$admines->afficheAdmin();
+
+      foreach($admin as $admine){
+      }
      
     }
     public function addadmin(){

@@ -1,6 +1,4 @@
 <?php
-      include('models/personne.php');
-      // include("../models/personne.php");
 
  class Administrateur extends Dbconnect
  {

@@ -5,6 +5,7 @@
  $pswrd="";
  $success="";
  $admine= new Administrateur();
+ 
     if(isset($_POST['save'])){
 
         $nom=$_POST["nom"];
