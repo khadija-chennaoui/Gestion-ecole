@@ -41,7 +41,7 @@
                     <i class="fa fa-3x fa-user" aria-hidden="true"></i><span class="fs-3"  style="margin-left: 60px;">Admin</span> </a>
                   </li>
                 
-                  <li class="nav-item btn btn-outline-light   rounded" style="margin-top:65%;" style ="display: flex;justify-content: flex-start">
+                  <li class="nav-item btn btn-outline-light  rounded" style="margin-top:100px;" style ="display: flex;justify-content: flex-start">
                     <a class="nav-link  "  href="signup" style="  COLOR: grey; FONT-SIZE: unset;FONT-WEIGHT: bold; font-family: monospace;">
                     <i class="fa fa-3x fa-sign-out" aria-hidden="true" ></i><span class="fs-3"  style="margin-left: 60px;">logout</span> </a>
                   </li>
