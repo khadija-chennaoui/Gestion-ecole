@@ -1,3 +1,13 @@
+
+    // require("../models/Administrateur.php");
+    // if ($_SESSION['nomadmine']) {
+    //    $nomadm= $_SESSION['nomadmine'];
+    // }else{
+    //    header("location:../views/signuptest.php");
+   
+    // }
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

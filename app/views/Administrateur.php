@@ -1,5 +1,11 @@
 <?php 
  require("../models/Administrateur.php");
+//  if ($_SESSION['nomadmine']) {
+//     $nomadm= $_SESSION['nomadmine'];
+//  }else{
+//     header("location:../views/signuptest.php");
+
+//  }
  $nom="";
  $prenom="";
  $role="";
