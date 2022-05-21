@@ -3,7 +3,6 @@ body{
     background-repeat: no-repeat;
     background-size:60%;
 }
-
 .row{
     background: white;
     border-radius: 50px;
@@ -24,18 +23,14 @@ body{
     background: rgba(255, 255, 255, 0.2);
     margin: 158px 47px 25px 1030px;
 }
-
 img{
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
 }
-
 form{
     padding-right: 70px;
     width: 100%;
-
 }
-
 input[type=text],input[type=password]{
     box-sizing: border-box;
     padding: 12px 5px;
@@ -48,7 +43,6 @@ input[type=text],input[type=password]{
     margin-bottom: 40px;
     align-items: center;
 }
-
 .btn1{
     border: none;
     outline: none;
@@ -60,8 +54,14 @@ input[type=text],input[type=password]{
     background-color: #bfa7ec;
     margin-top: 10px;
 }
-
 .btn1:hover{
     background: rgb(225, 219, 219);
     color: #8350e1;
 }
+@media only screen and(max-width:900px){
+    .row{
+        max-width: 50%;
+    }
+    
+}
+

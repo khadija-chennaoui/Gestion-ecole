@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,6 @@
  }
     </style>
 </head>
-
 <body>
     <nav>
     <?php include('../includes/sidebar.php') ?>
