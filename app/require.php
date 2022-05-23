@@ -6,7 +6,8 @@ require_once('models/parent.php');
 }elseif(basename($_SERVER['REQUEST_URI'])=="professeur"|| basename($_SERVER['REQUEST_URI'])=="operation"){
     require_once('models/professeur.php');
 }elseif(basename($_SERVER['REQUEST_URI'])=="etudiants"|| basename($_SERVER['REQUEST_URI'])=="operation"){
-    require_once('models/étudiant.php');
+    require_once('models/parent.php');
+    require_once('models/etudiant.php');
 }elseif(basename($_SERVER['REQUEST_URI'])=="Administrateur"|| basename($_SERVER['REQUEST_URI'])=="operation"){
     require_once('models/Administrateur.php');
 }

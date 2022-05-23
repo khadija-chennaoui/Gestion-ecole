@@ -16,7 +16,7 @@
       $prepare = $prepare->execute([$this->Nom, $this->Genre, $this->matière, $this->phone, $this->class_prof]);
 
       if ($prepare) {
-        header('location: ../views/professeur.php');
+        header('location:professeur');
       } else echo 'erreur!!!!';
     } catch (PDOException $ex) {
       echo $ex->getMessage();
@@ -27,7 +27,7 @@
   {
     if (isset($_POST['search'])) {
       $search = $_POST['search'];
-      $query = "SELECT * FROM professeurs WHERE Matricule LIKE ? OR Nom_complet LIKE ? OR Genre LIKE ? OR Matière LIKE ? OR Phone LIKE ? OR class_prof LIKE ?";
+      $query = "SELECT * FROM professeurs WHERE Matricule LIKE ? OR Nom_complet LIKE ? OR Genre LIKE ? OR Matiere LIKE ? OR Phone LIKE ? OR class_prof LIKE ?";
       $query = $this->GetData($query);
       $query->execute(['%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%']);
       return $query->fetchAll();
@@ -41,7 +41,7 @@
   {
     if (isset($_POST['search'])) {
       $search = $_POST['search'];
-      $query = "SELECT * FROM professeurs WHERE Matricule LIKE ? OR Nom_complet LIKE ? OR Genre LIKE ? OR Matière LIKE ? OR Phone LIKE ? OR class_prof LIKE ?";
+      $query = "SELECT * FROM professeurs WHERE Matricule LIKE ? OR Nom_complet LIKE ? OR Genre LIKE ? OR Matiere LIKE ? OR Phone LIKE ? OR class_prof LIKE ?";
       $query = $this->GetData($query);
       $query->execute(['%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%']);
       return $query->fetchAll();
@@ -58,12 +58,12 @@
       $this->phone=$phone;
       $this->matière=$matière;
       $this->class_prof=$class_prof;
-      $sql = "UPDATE professeurs SET Nom_complet=?, Genre=?, Matière=?,Phone=?, class_prof=? WHERE Matricule=$id";
+      $sql = "UPDATE professeurs SET Nom_complet=?, Genre=?, Matiere=?,Phone=?, class_prof=? WHERE Matricule=$id";
       $prepare = $this->GetData($sql);
       $prepare = $prepare->execute([$this->Nom, $this->Genre, $this->matière, $this->phone, $this->class_prof]);
 
       if ($prepare) {
-        header('location: ../views/professeur.php');
+        header('location:professeur');
       } else echo 'erreur!!!!';
 
 

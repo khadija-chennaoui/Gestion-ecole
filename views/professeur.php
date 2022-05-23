@@ -1,27 +1,3 @@
-<?php include('../models/professeur.php');
-$error = '';
-if (isset($_POST['save'])) {
-    $test = new professeur();
-    $test->setNom($_POST['nom']);
-    $test->setGenre($_POST['genre']);
-    $test->matière = $_POST['matière'];
-    $test->phone = $_POST['phone'];
-    $test->class_prof = $_POST['class'];
-
-
-    $test->insert();
-} 
-
-
-if (isset($_POST['find'])) {
-    $data = new professeur();
-    $professeur = $data->view();
-    if (!$professeur) {
-        $error = ' <div class="alert alert-danger" role="alert"> not found!!! </div>';
-    }
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +30,7 @@ if (isset($_POST['find'])) {
 
 
                         <form class="col-sm-6 input-group mb-3" method="POST" style="max-width:500px;">
-                            <a href="professeur.php" class="btn "><i class="fa fa-2x fa-home" aria-hidden="true"></i></a>
+                            <a href="professeur" class="btn "><i class="fa fa-2x fa-home" aria-hidden="true"></i></a>
                             <input type="text" name="search" class="form-control" placeholder="rechercher..." aria-label="Recipient's username" aria-describedby="button-addon2">
                             <button class="btn btn-outline-secondary" name="find" type="submit" id="button-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </form>
@@ -77,8 +53,8 @@ if (isset($_POST['find'])) {
                         </thead>
                         <tbody class="fw-bold">
                             <?php
-                            $prof = new professeur();
-                            $prof = $prof->view();
+                            $prof = new AdministrateurController();
+                            $prof = $prof->getAllprofesseur();
 
                             foreach ($prof as $professeur) {
                                 echo '
@@ -87,12 +63,13 @@ if (isset($_POST['find'])) {
                                             <td>' . $professeur['Nom_complet'] . '</td>
                                             <td>' . $professeur['Genre'] . '</td>
                                             <td>' . $professeur['class_prof'] . '</td>
-                                            <td>' . $professeur['Matière'] . '</td>
+                                            <td>' . $professeur['Matiere'] . '</td>
                                             <td>' . $professeur['Phone'] . '</td>
                                             
                                             <td>
-                                            <a href="editProf.php?id_prof_E='.$professeur['Matricule'].'" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary" data-bs-toggle="modal" data-bs-target="#myModel"><img  src="https://img.icons8.com/fluency/20/000000/edit-user-female.png"/></a>
-                                                <a href="../models/opération.php?id_prof_D=' .$professeur['Matricule']. '" class="btn btn-outline-danger " data-toggle="modal"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></a>
+                                            <a href="#?id_prof_E='.$professeur['Matricule'].'" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary" data-bs-toggle="modal" data-bs-target="#myModel"><img  src="https://img.icons8.com/fluency/20/000000/edit-user-female.png"/></a>
+                                            
+                                            <form action="operation" method="POST" > <button type="submit" name="deletprof" value="' .$professeur['Matricule']. '" class="btn btn-outline-danger " data-toggle="modal"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"></button> </form>
                                                 
                                             </td>
                                         </tr>
@@ -106,7 +83,16 @@ if (isset($_POST['find'])) {
                             ?>
                         </tbody>
                     </table>
-                    <?php echo $error; ?>
+                    <?php  
+                     $prof = new AdministrateurController();
+                     $prof = $prof->getAllprofesseur();
+                     if(!$prof)
+                     {
+                         $error=' <div class="alert alert-danger" role="alert"> not found!!! </div>';
+                     }
+                     else $error='';
+                     
+                    echo $error; ?>
 
                 </div>
             </div>
@@ -122,7 +108,7 @@ if (isset($_POST['find'])) {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form class="form-container" method="POST" onsubmit="return validation()">
+                            <form class="form-container" action="operation" method="POST" onsubmit="return validation()">
                                 <div class="mb-3 fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                     <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter name complet" style="margin-bottom: 32px;">
@@ -162,7 +148,7 @@ if (isset($_POST['find'])) {
 
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" name="save" class="btn btn-info mT-3">Save</button>
+                                    <button type="submit" name="save3" class="btn btn-info mT-3">Save</button>
                                 </div>
                             </form>
                         </div>
@@ -189,7 +175,7 @@ if (isset($_POST['find'])) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <form class="form-container" action="../models/opération.php" method="POST" >  
+                    <form class="form-container" action="operation" method="POST" >  
                                    <div class="mb-3  fw-bold"  >
                                         <input type="text" class="form-control" style="visibility : hidden;"  name="matricule" id="matricule"    placeholder="Enter le name">
              

@@ -1,17 +1,4 @@
 <?php 
-$mode = new Etudiant();
-if (isset($_POST['submit'])) {
-    $nom = $_POST['Nom_complet'];
-    $genre = $_POST['Genre'];
-    $nee = $_POST['Date_naissance'];
-    $email = $_POST['Email'];
-    $parent = 1;
-    $clas = $_POST['id_class'];
-    $insert = $mode->ajouteretudiant($nom, $genre, $nee, $email, $parent, $clas);
-}
-if (isset($_POST['find'])) {
-    $mode->affichetudiant();
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +49,8 @@ if (isset($_POST['find'])) {
                         </thead>
                         <tbody class="fw-bold">
                             <?php
-                            $rows = $mode->affichetudiant();
+                            $etudiant = new AdministrateurController();
+                            $rows = $etudiant->getAllstudent();
                             if ($rows) {
                                 foreach ($rows as $id => $row) {
                             ?>
@@ -80,7 +68,7 @@ if (isset($_POST['find'])) {
 
                                         <td class="text-nowrap">
                                             <a href="" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
-                                            <a href="../views/operation.php?id=<?php echo $row[0]; ?>$req=deletetudiant" class="badge bg-danger">Delete</a>
+                                            <form action="operation" method="POST" ><button type="submit" name ="delete" class="btn btn-outline-danger " style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="Matricule" value="<? $rows[0]?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"></button></form>    
                                         </td>
                                     </tr>
                             <?php
@@ -102,19 +90,14 @@ if (isset($_POST['find'])) {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form class="form-container" action="" id="form1" method="POST" data-parsley-validate>
+                            <form class="form-container" action="operation" id="form1" method="POST" data-parsley-validate>
                                 <div class="mb-3 fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                     <input type="text" class="form-control" id="nom" name="Nom_complet" placeholder="Enter name complet" style="margin-bottom: 32px;" data-parsley-length="[4, 20]" data-parsley-trigger="change" required>
                                 </div>
-                                <!-- <div class="mb-3 fw-bold">
-                                    <label for="exampleFormControlInput1" class="form-label">Genre</label>
-                                    <input type="text" class="form-control" id="Genre" name="Genre" placeholder="Enter name complet" style="margin-bottom: 32px;"  required data-parsley-trigger="change">
-                                </div> -->
                                 <div class="mb-3  fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Genre</label><br>
                                     <select name="Genre" class="form-control" id="Genre" required data-parsley-trigger="change">
-                                        <option  value="admine edudient"> </option>
                                         <option value="admine edudient">Femme</option>
                                         <option value="admine gestion">Homme</option>
                                     </select>
@@ -127,25 +110,19 @@ if (isset($_POST['find'])) {
                                     <label for="exampleFormControlInput1" class="form-label">Email</label>
                                     <input type="email" data-parsley-type="email" class="form-control" id="email" name="Email" placeholder="Enter Email" required data-parsley-trigger="change">
                                 </div>
-                                <div class="mb-3  fw-bold">
-                                    <label for="exampleFormControlInput1" class="form-label">Classe</label>
-                                    <input type="text" class="form-control" id="classe" name="id_class" placeholder="Enter classe" required data-parsley-trigger="change">
-                                </div>
+                            
                                 <div class="mb-3  fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Nom du parent</label>
-                                    <input type="text" class="form-control" id="genre" name="parent" placeholder="Enter le nom des parents" required data-parsley-trigger="change">
+                                    <select class="form-control" type="text" id="parent" name="parent">
+                                    <?php $row =$etudiant->getAllParent();foreach ($row as  $row) {?>
+                                         <option value="<?php echo $row[0]; ?>"><?php echo $row[1];} ?> </option>
+                                
+                                </select>
                                 </div>
+                                <label for="exampleFormControlInput1" class="form-label">Classe</label>
                                 <select class="form-control" type="text" id="classe" name="id_class">
-                                    <option value="admine edudient"> </option>
-                                    <?php
-                                    $rows = $mode->afficheClass();
-                                    if ($rows) {
-                                        foreach ($rows as  $row) {
-                                    ?>
-                                            <option value="<?php echo $row[0]; ?>"><?php echo $row[1]; ?> </option>
-                                    <?php
-                                        }
-                                    } ?>
+                                    <?php $rows =$etudiant->getclass();  foreach ($rows as  $row) { ?>
+                                            <option value="<?php echo $row[0]; ?>"><?php echo $row[1]; } ?> </option>
                                 </select>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -153,9 +130,7 @@ if (isset($_POST['find'])) {
                                     <button type="submit" name="submit" class="btn btn-success mT-">Save</button>
                                 </div>
                             </form>
-                            <!-- <script>
-                            //     $('#form1').parsley();
-                            // </script> -->
+                
                         </div>
                         <div class="modal-footer">
                         </div>
@@ -163,7 +138,6 @@ if (isset($_POST['find'])) {
                 </div>
             </div>
         </div>
-        <!-- model de updatetudiant -->
         <div class="col-sm6 mt-3 " style="float: right;">
             <div class="modal fade" id="myModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -173,7 +147,7 @@ if (isset($_POST['find'])) {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form class="form-container" id="form" action="operation.php" method="POST">
+                            <form class="form-container" id="form" action="operation" method="POST">
                                 <div class="mb-3 fw-bold">
                                     <input type="text" hidden class="form-control" id="matricule" name="matricul" placeholder="Enter name complet" style="margin-bottom: 32px;">
                                 </div>
@@ -183,9 +157,7 @@ if (isset($_POST['find'])) {
                                 </div>
                                 <div class="mb-3 fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Genre</label>
-                                    <!-- <input type="text" class="form-control" id="gen" name="gen" placeholder="Enter name complet" style="margin-bottom: 32px;"> -->
                                     <select name="gen" class="form-control" id="gen" >
-                                        <option  value="admine edudient"> </option>
                                         <option value="admine edudient">Femme</option>
                                         <option value="admine gestion">Homme</option>
                                     </select>
@@ -200,32 +172,19 @@ if (isset($_POST['find'])) {
                                 </div>
                                 <div class="mb-3  fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">NOM Parent</label><br>
-                                    <select type="text" class="form-control" name="NAMEP">
-                                        <?php
-                                        $rows = $mode->affiche();
-                                        if ($rows) {
-                                            foreach ($rows as  $row) {
-                                        ?>
-                                                <option value="<?php echo $row[0]; ?>"><label id="parent"><?php echo $row[1]; ?> </label></option>
-                                        <?php
-                                            }
-                                        } ?>
+                                    <select class="form-control" type="text" id="NAMEP" name="NAMEP">
+                                    <?php $row =$etudiant->getAllParent();foreach ($row as  $row) {?>
+                                         <option value="<?php echo $row[0]; ?>"><?php echo $row[1];} ?> </option>
+                                
+                                </select>
                                     </select>
                                 </div>
                                 <div class="mb-3  fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Class</label><br>
-                                    <select class="form-control" type="text" id="cla">
-                                        <?php
-                                        $rows = $mode->afficheClass();
-                                        if ($rows) {
-                                            foreach ($rows as  $row) {
-                                        ?>
-                                                <!-- <option value="<?php echo $row[1]; ?>" selected><?php echo $row[1]; ?> </option> hada dar lina double  -->
-                                                <option name="cla" value="<?php echo $row[0]; ?>" selected><?php echo $row[1]; ?> </option>
-                                        <?php
-                                            }
-                                        } ?>
-                                    </select>
+                                    <select class="form-control" type="text" name ="cla" id="cla">
+                                    <?php $rows =$etudiant->getclass();  foreach ($rows as  $row) { ?>
+                                            <option value="<?php echo $row[0]; ?>"><?php echo $row[1]; } ?> </option>
+                                </select>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -255,7 +214,7 @@ if (isset($_POST['find'])) {
             $('#gen').val(col1);
             $('#dateN').val(col3);
             $('#Email').val(currentRow.find("td:eq(5)").text());
-            $('#parent').val(currentRow.find("td:eq(6)").text());
+            $('#NAMEP').val(currentRow.find("td:eq(6)").text());
             $('#ads').val(currentRow.find("td:eq(7)").text());
             $('#cla').val(currentRow.find("td:eq(8)").text());
         })

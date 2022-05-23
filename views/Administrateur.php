@@ -1,38 +1,3 @@
-<?php 
- $nom="";
- $prenom="";
- $role="";
- $pswrd="";
- $success="";
- $admine= new Administrateur();
- 
-    if(isset($_POST['save'])){
-
-        $nom=$_POST["nom"];
-        $prenom=$_POST["prenom"];
-        $role=$_POST["roleadmin"];
-        $password=$_POST["pwd"];
-         $resultinsert=$admine->creatAdmine($nom ,$prenom,$role,$password);
-         if ($resultinsert) {
-            
-         }else{
-         echo "false";
-        }
-        
-        }
-    
-
-        if(isset($_POST['find'])){
-
-            $search = $_POST['search'];
-            $adminSearch=new Administrateur();
-            $adminSearch->afficheAdmin();
-           
-           
-        }
-      
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,20 +51,23 @@
                 </thead>
                 <tbody  class="fw-bold">
                 <?php 
-                    $admines=$admine->afficheAdmin();
-
+                    // $admines=new AdministrateurController();
+                    //     $admines->getAlladmin();
+                    $admine = new AdministrateurController();
+                   $admines=$admine->getAlladmin();
                     foreach($admines as $admine){
                            
                 ?>
                     <tr>
-                        <td><?php echo $admine['Matricule']?></td>
-                        <td><?= $admine['Nom'] ?></td>
-                        <td><?= $admine['Prénom'] ?></td>
-                        <td><?= $admine['Rôle'] ?></td>
-                        <td><?= $admine['Mot _de_Passe'] ?></td>
+                        <td><?php echo $admine[0]?></td>
+                        <td><?= $admine[1] ?></td>
+                        <td><?= $admine[2] ?></td>
+                        <td><?= $admine[3] ?></td>
+                        <td><?= $admine[4] ?></td>
                         <td>
                             <button class="btn btn-outline-primary  fw-bold update" ><a href="" style="  color:primary"  data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png"/></a></button>
-                            <a href="../views/operation.php?deletid=<?=$admine['Matricule'] ?>" onclick="return confirm('Êtes vous sur de vouloir supprimer ??!!');"; class="btn btn-outline-danger " data-toggle="modal" ><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></a>
+                            <form action="operation"   onclick="return confirm('Êtes vous sur de vouloir supprimer ??!!');" method="POST" ><button type="submit" name ="deletid" class="btn btn-outline-danger " style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="Matricule" value="<?= $admine['Matricule']?>  "><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
+
                         </td>
                     </tr>
                    
@@ -121,15 +89,15 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <form class="form-container"  method="POST" >  
+                    <form class="form-container"  action="operation" method="POST" >  
                                     <div class="mb-3 fw-bold" >
                                         <label for="exampleFormControlInput1" class="form-label">Nom </label>
-                                        <input type="text" class="form-control" id="nom" name="nom"    value="<?= $nom?>"   placeholder="Enter name complet" style="margin-bottom: 32px;">
+                                        <input type="text" class="form-control" id="nom" name="nom"       placeholder="Enter name complet" style="margin-bottom: 32px;">
                                     </div>
                            
                                     <div class="mb-3  fw-bold"  >
                                         <label for="exampleFormControlInput1" class="form-label">Prénom</label>
-                                        <input type="text" class="form-control" name="prenom"  value="<?= $prenom ?>"   placeholder="Enter le Prénom">
+                                        <input type="text" class="form-control" name="prenom"     placeholder="Enter le Prénom">
              
                                     </div>
                            
@@ -144,7 +112,7 @@
                                     </div>
                                     <div class="mb-3  fw-bold"  >
                                         <label for="exampleFormControlInput1" class="form-label">Mot de Passe</label>
-                                        <input type="password" class="form-control" id="pwd" name="pwd"  value="<?= $pswrd ?>"   placeholder="Mot de Passe">
+                                        <input type="password" class="form-control" id="pwd" name="pwd"    placeholder="Mot de Passe">
                                     
                                     </div>
          
@@ -175,7 +143,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <form class="form-container" action="operation.php" method="POST" >  
+                    <form class="form-container" action="operation" method="POST" >  
                                    <div class="mb-3  fw-bold"  >
                                         <input type="text" class="form-control" hidden name="matricule" id="matricule"    placeholder="Enter le name">
              

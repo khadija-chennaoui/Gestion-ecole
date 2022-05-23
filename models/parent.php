@@ -16,8 +16,8 @@
     public function Afficher()
     {
       try{
-         $sql="SELECT * FROM  parents";
-         return $prepare=$this->connect()->query($sql)->fetchALL();
+    
+         return $prepare=$this->connect()->query("SELECT * FROM  parents ORDER BY Matricule desc")->fetchALL();
         }catch(PDOException $e){ return $e->getMessage();} 
       }
  
@@ -44,6 +44,12 @@
       $sql->close;
       }catch(PDOException $e){ return $e->getMessage();} 
     }
+    public function setJob($job){
+      $this->job=$job;
+  }
+  public function setPhone($Phone){
+    $this->phone=$Phone;
+}
 
 
  
