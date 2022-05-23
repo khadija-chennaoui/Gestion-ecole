@@ -1,12 +1,14 @@
-<?
- class Personne extends Dbconnect{
+<?php 
 
-private $Matricule;
-private $Nom;
-private $Genre;
-private $Adresse;
+class Personne extends Dbconnect{
 
-public function getMatricule(){
+public $Matricule;
+public $Nom;
+public $Genre;
+public $Adresse;
+
+
+public  function getMatricule(){
     return $this->Matricule;
 }
 
@@ -38,3 +40,4 @@ public function setAdresse($Adresse){
     $this->Adresse=$Adresse;
 }
 }
+?>

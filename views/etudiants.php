@@ -1,17 +1,17 @@
-<?php include('../models/étudiant.php');
-$mode = new Etudiant();
-if (isset($_POST['submit'])) {
-    $nom = $_POST['Nom_complet'];
-    $genre = $_POST['Genre'];
-    $nee = $_POST['Date_naissance'];
-    $email = $_POST['Email'];
-    $parent = 1;
-    $clas = $_POST['id_class'];
-    $insert = $mode->ajouteretudiant($nom, $genre, $nee, $email, $parent, $clas);
-}
-if (isset($_POST['find'])) {
-    $mode->affichetudiant();
-}
+<?php 
+// $mode = new Etudiant();
+// if (isset($_POST['submit'])) {
+//     $nom = $_POST['Nom_complet'];
+//     $genre = $_POST['Genre'];
+//     $nee = $_POST['Date_naissance'];
+//     $email = $_POST['Email'];
+//     $parent = 1;
+//     $clas = $_POST['id_class'];
+//     $insert = $mode->ajouteretudiant($nom, $genre, $nee, $email, $parent, $clas);
+// }
+// if (isset($_POST['find'])) {
+//     $mode->affichetudiant();
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +29,6 @@ if (isset($_POST['find'])) {
     </style>
 </head>
 <body>
-    <?php include('../includes/sidebar.php'); ?>
     <div class="container-fluid px-5 pt-3">
         <div class="row">
             <div class="table-wrapper">
@@ -63,8 +62,9 @@ if (isset($_POST['find'])) {
                         </thead>
                         <tbody class="fw-bold">
                             <?php
-                            $rows = $mode->affichetudiant();
-                            if ($rows) {
+                            $rows=new AdministrateurController();
+                            $rows = $rows->getAllstudent();
+                         
                                 foreach ($rows as $id => $row) {
                             ?>
                                     <tr>
@@ -85,7 +85,7 @@ if (isset($_POST['find'])) {
                                         </td>
                                     </tr>
                             <?php
-                                }
+                                
                             }
                             ?>
                         </tbody>
@@ -103,7 +103,7 @@ if (isset($_POST['find'])) {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form class="form-container" action="" id="form1" method="POST" data-parsley-validate>
+                            <form class="form-container" action="operation" id="form1" method="POST" data-parsley-validate>
                                 <div class="mb-3 fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                     <input type="text" class="form-control" id="nom" name="Nom_complet" placeholder="Enter name complet" style="margin-bottom: 32px;" data-parsley-length="[4, 20]" data-parsley-trigger="change" required>
@@ -139,14 +139,13 @@ if (isset($_POST['find'])) {
                                 <select class="form-control" type="text" id="classe" name="id_class">
                                     <option value="admine edudient"> </option>
                                     <?php
-                                    $rows = $mode->afficheClass();
-                                    if ($rows) {
-                                        foreach ($rows as  $row) {
-                                    ?>
-                                            <option value="<?php echo $row[0]; ?>"><?php echo $row[1]; ?> </option>
-                                    <?php
-                                        }
-                                    } ?>
+                                    // $rows= new AdministrateurController();
+                                    // $rows = $mode->getclass();
+                                   
+                                    //     foreach ($rows as  $row) {
+                                    // ?>
+                                            <option value="1">Par </option>
+                                    
                                 </select>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -174,7 +173,7 @@ if (isset($_POST['find'])) {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form class="form-container" id="form" action="operation.php" method="POST">
+                            <form class="form-container" id="form" action="operation" method="POST">
                                 <div class="mb-3 fw-bold">
                                     <input type="text" hidden class="form-control" id="matricule" name="matricul" placeholder="Enter name complet" style="margin-bottom: 32px;">
                                 </div>
@@ -186,8 +185,9 @@ if (isset($_POST['find'])) {
                                     <label for="exampleFormControlInput1" class="form-label">Genre</label>
                                     <!-- <input type="text" class="form-control" id="gen" name="gen" placeholder="Enter name complet" style="margin-bottom: 32px;"> -->
                                     <select name="gen" class="form-control" id="gen" >
-                                        <option value="Femme">Femme</option>
-                                        <option value="Homme">Homme</option>
+                                        <option  value="admine edudient"> </option>
+                                        <option value="admine edudient">Femme</option>
+                                        <option value="admine gestion">Homme</option>
                                     </select>
                                 </div>
                                 <div class="mb-3 fw-bold">
@@ -202,7 +202,7 @@ if (isset($_POST['find'])) {
                                     <label for="exampleFormControlInput1" class="form-label">NOM Parent</label><br>
                                     <select type="text" class="form-control" name="NAMEP">
                                         <?php
-                                        $rows = $mode->affiche();
+                                        $rows = $mode->getAllParent();
                                         if ($rows) {
                                             foreach ($rows as  $row) {
                                         ?>
@@ -214,14 +214,14 @@ if (isset($_POST['find'])) {
                                 </div>
                                 <div class="mb-3  fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Class</label><br>
-                                    <select class="form-control" type="text" id="cla" name="cla">
+                                    <select class="form-control" type="text" id="cla">
                                         <?php
                                         $rows = $mode->afficheClass();
                                         if ($rows) {
                                             foreach ($rows as  $row) {
                                         ?>
-                                              
-                                                <option  value="<?php echo $row[0]; ?>" ><?php echo $row[1]; ?> </option>
+                                                <!-- <option value="<?php echo $row[1]; ?>" selected><?php echo $row[1]; ?> </option> hada dar lina double  -->
+                                                <option name="cla" value="<?php echo $row[0]; ?>" selected><?php echo $row[1]; ?> </option>
                                         <?php
                                             }
                                         } ?>

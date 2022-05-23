@@ -1,7 +1,7 @@
 <?php
-include('Connection.php');
 
-class Etudiant extends Dbconnect
+
+class Etudiant extends Personne
 {
   public function ajouteretudiant($nom, $genre, $nee, $email, $parent, $clas)
   {
@@ -43,13 +43,16 @@ class Etudiant extends Dbconnect
     }
   }
 
-  public function affiche(){
-    $sql="SELECT * FROM  parents";
-         return $prepare=$this->connect()->query($sql)->fetchALL();
-  }
+  // public function affiche(){
+  //   $sql="SELECT * FROM  parents";
+  //        return $prepare=$this->connect()->query($sql)->fetchALL();
+  // }
 
   public function afficheClass(){
     $sql="SELECT * FROM  classes";
          return $prepare=$this->connect()->query($sql)->fetchALL();
   }
-}
+
+ }
+
+?>
