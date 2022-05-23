@@ -1,8 +1,6 @@
 <?php
-      include('models/personne.php');
-      // include("../models/personne.php");
 
- class Administrateur extends Dbconnect
+ class Administrateur extends Personne
  {
     public function creatAdmine($nom, $prenom, $role, $password){
 
@@ -37,6 +35,7 @@
     public function deletadmin($iddelet){
 
         $ressdelet=$this->connect()->exec("DELETE FROM `administrateurs` WHERE Matricule='$iddelet' ");
+        return     $ressdelet;
     }
 
     public function updatAdmin($Nom,$Prenom,$Role,$password,$Updateid){

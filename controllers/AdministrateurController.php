@@ -73,38 +73,39 @@ class AdministrateurController{
 
 
     public function getAlladmin(){
-      $admine=new Administrateur();
-      if(isset($_POST['search'])) return $admine-> afficheAdmin($_POST['search']);
-      else return $admine->afficheAdmin();
+      $admines=new Administrateur();
+      return  $admines->afficheAdmin();       
+     
     }
     public function addadmin(){
       if(isset($_POST['save']) ){
-        $admadd = new  Administrateur(); 
+        $admine = new Administrateur(); 
         $nom=$_POST["nom"];
         $prenom=$_POST["prenom"];
         $role=$_POST["roleadmin"];
         $password=$_POST["pwd"];
-        if($admadd->creatAdmine($nom,$prenom,$role,$password)) header('location:Administrateur');
-        }
-    
+        if($admine->creatAdmine($nom, $prenom, $role, $password)) header('location:Administrateur');
+      }
     }
-    public function deletadmin(){
-      // if(!empty($_GET['deletid']) && is_numeric($_GET['deletid'])){
-      //   $adminedel= new Administrateur();
-      //   $ressdelet=$_GET['deletid'];
-      //   $adminedel->deletadmin($ressdelet);
-      //   if($adminedel->deletadmin($ressdelet)) header('location:Administrateur');
-      //  } 
-       if(isset($_POST['deletid'])){
-        $admindelt = new Administrateur();
-        $deletid=$_POST['Matricule'];
-        if($admindelt->deletadmin($deletid)) header('location:Administrateur');
-       } 
     
+    public function deleteadmin(){
+      if(isset($_POST['deletid'])){
+       $admine = new Administrateur(); 
+        if($admine->deletadmin($_POST['Matricule'])) header('location:Administrateur');
+       } 
     }
 
     public function updateadmin(){
-
+      if(isset($_POST['updatebtn'])){
+    
+        $admine = new Administrateur(); 
+        $Nom=$_POST["Name"];
+        $Prenom=$_POST["prenome"];
+        $Role=$_POST["roleadmine"];
+        $password=$_POST["password"];
+        $Updateid=$_POST["matricule"];
+         if($admine->updatAdmin($Nom,$Prenom,$Role,$password,$Updateid))header('location:Administrateur');
+       }
     }
       //  ------------------------------------------------------------------------
      

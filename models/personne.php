@@ -1,5 +1,4 @@
 <?php 
-include('database/Connection.php');
 
 class Personne extends Dbconnect{
 
@@ -9,7 +8,7 @@ public $Genre;
 public $Adresse;
 
 
-public function getMatricule(){
+public  function getMatricule(){
     return $this->Matricule;
 }
 

@@ -1,100 +1,61 @@
-<?php 
-    $namelog="";
-    $errornamlog="";
-    $passwordlog="";
-    $errorpwdlog="";
-    if (isset($_POST['login'])) {
-     echo "hello";
-    }
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        body{
-            background: rgb(219, 226, 226);
-        }
-
-        .row{
-            background: white;
-            border-radius: 30px;
-            box-shadow: 12px 12px 22px grey ;
-            margin-top: 20%;
-            align-items: center;
-        }
-
-        img{
-            border-top-left-radius:30px;
-            border-bottom-left-radius:30px;
-            width: 100%;
-        }
-
-        .btn1{
-            border:none;
-            outline: none;
-            height: 50px;
-            width: 100%;
-            background-color: #9573D4;
-            color: white;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-
-            .btn1:hover{
-                background: white;
-                border:1px solid;
-                color:black;
-            }
-            </style>
+    <title>signup</title>
+    <link rel="stylesheet" href="styleee.css">
 </head>
+
 <body>
-<section class="Form my-4 mx-5">
-        <div class="container">
-            <div class="row no-gutters p-5">
-                <div class="col-lg-5">
-                    <img src="../views/img/login.jpg" alt="">
-                </div>
-                <div class="col-lg-7 px-5 pt-5">
-                    <h1 style="color:orange;">Signin</h1>
-                    <h4>Signin into your account</h4>
-                    <form ">
-                        <div class="form-row>">
-                            <div class="col-lg-10">
-                                <input type="text" placeholder="Entre your Name" name="namelogin" class="form-control my-3 p-4">
+    <main>
+            <div class="container">
+                <div class="row">
+                  
+                    <div class="form">
+                        <div class="col-lg-5">
+                        <h1 style="color:#fd7e14;"> SIGN UP</h1>
+                        <div class="" style="border: 1px solid; width:40px; height: 5px; background-color: #fd7e14; border: none;"></div>
+                       <p style="color:grey;"> Please Sign Up to your Account to cntinue with App</p>
+                    </div>
+                    <form>                          
+                        <div class="form-row">
+                          <div class=" name mb-3 ">
+                            <ion-icon name="mail-outline" style="position:absolute; margin-left:15px; margin-top: 17px;"></ion-icon>
+                            <input type="text" class="form-control" id="email" name="mail" class="form-control" placeholder="       Email Address" style="width:500px ;">
+                            <span id="idemail" style="color:red; font-weight: bold;"></span>
+                          </div>
+
+                           <div class="mb-3 ">
+                            <ion-icon name="key-outline" style="position:absolute; margin-left:15px; margin-top: 17px;"></ion-icon>
+                              <input type="password" class="form-control" id="password" name="pass" placeholder="        ***********************************"style="width:500px ;" >
+                              <span id="pass" style="color:red; font-weight: bold; "></span>
                             </div>
+                           <div class="mb-3 ">
+                            <ion-icon name="key-outline" style="position:absolute; margin-left:15px; margin-top: 17px;"></ion-icon>
+                            <input type="password" class="form-control" id="passwordver" name ="cpass"placeholder="        *********************************" style="width:500px ;">
+                            <span id="pass2" style="color:red; font-weight: bold; "></span>
+                          </div> 
+                             <input type="submit" value="Continue" class="btn1">          
+                        <div class="mb-5">      
+                        <p style="text-align:center;">Already Have an account?<a href="login.html" class=""style="text-decoration:none; color:green;">SIGN IN</a></p>
                         </div>
-                        <div class="form-row>">
-                            <div class="col-lg-10">
-                                <input type="password" placeholder="*************" name="passwordlogin" class="form-control my-3 p-4">
+                        <div class="social" style="text-align:center;">
+                            <p class="">Or signup with</p>
+                                <img src="images/Image 1.png" alt="" width="50px">
+                                <img src="images/Image 2.png" alt="" width="50px">
+                                <img src="images/Image 3.png" alt="" width="65px">
+                                <img src="images/Image 4.png" alt="" width="50px">
                             </div>
-                        </div>
-                        <div class="form-row>">
-                            <div class="col-lg-10">
-                                <button type="button" name="login" class="btn1 mt-3 mb-3">Login</button>
-                            </div>
-                        </div>
-                        <a href="" style="text-decoration: none; color:#28881D">Forgot password?</a>
                     </form>
+                    </div>                   
                 </div>
             </div>
-            </div>
+    </main>    
 
-</section>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-
-
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
 </body>
 </html>
