@@ -1,6 +1,5 @@
 <?php
-require('personne.php');
-class professeur extends Personne
+      class professeur extends Personne
 {
 
   public $class_prof;
@@ -17,7 +16,7 @@ class professeur extends Personne
       $prepare = $prepare->execute([$this->Nom, $this->Genre, $this->matière, $this->phone, $this->class_prof]);
 
       if ($prepare) {
-        header('location: ../views/professeur.php');
+        header('location:professeur');
       } else echo 'erreur!!!!';
     } catch (PDOException $ex) {
       echo $ex->getMessage();
@@ -64,7 +63,7 @@ class professeur extends Personne
       $prepare = $prepare->execute([$this->Nom, $this->Genre, $this->matière, $this->phone, $this->class_prof]);
 
       if ($prepare) {
-        header('location: ../views/professeur.php');
+        header('location:professeur');
       } else echo 'erreur!!!!';
 
 

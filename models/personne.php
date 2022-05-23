@@ -1,6 +1,7 @@
 
+
 <?php
-include('Connection.php');
+
 class Personne extends Dbconnect
 {
 
@@ -50,3 +51,4 @@ class Personne extends Dbconnect
         $this->Adresse = $Adresse;
     }
 }
+?>
