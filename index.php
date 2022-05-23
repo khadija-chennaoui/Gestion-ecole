@@ -9,15 +9,23 @@ require_once('./controllers/HomeController.php');
 $home =new HomeController();
 $page=['Administrateur','etudiants','model','parent','professeur','statistique','operation'];
 
-if(isset($_GET['page'])){
-    if(in_array($_GET['page'],$page)){
-        $home->index($_GET['page']);
-    } else{
-      include('views/includes/404.php');
-    }
-}else{
+if (isset($_SESSION['logadmin']) && $_SESSION['logadmin']===true){
+    if(isset($_GET['page'])){
+        if(in_array($_GET['page'],$page)){
+            $home->index($_GET['page']);
+        } else{
+          include('views/includes/404.php');
+        }
+    }else{
+            $home->index('signup');
+        }
+    
+}else if(isset($_GET['page']) && $_GET['page']=== 'signup'){
         $home->index('signup');
-    }
+    }else{
+        $home->index('Administrateur');
+    
+}
 
 
 

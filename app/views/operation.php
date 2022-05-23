@@ -1,24 +1,24 @@
-<?php 
+<!-- <?php 
 
- require("../models/Administrateur.php");
+//  require("../models/Administrateur.php");
 
-$admine= new Administrateur();
+// // $admine= new Administrateur();
 
- if (!empty($_GET['deletid']) && is_numeric($_GET['deletid'])) {
+//  if (!empty($_GET['deletid']) && is_numeric($_GET['deletid'])) {
 
-    $ressdelet=$_GET['deletid'];
-    $admine->deletadmin($ressdelet);
-    header("location:../views/Administrateur.php");
- }
+//     $ressdelet=$_GET['deletid'];
+//     $admine->deletadmin($ressdelet);
+//     header("location:../views/Administrateur.php");
+//  }
 
 
- if (isset($_POST['updatebtn'])) {
+//  if (isset($_POST['updatebtn'])) {
 
-    $admine->updatAdmin($_POST['Name'],$_POST['prenome'] ,$_POST['roleadmine'],$_POST['password'],$_POST['matricule']);
+//     $admine->updatAdmin($_POST['Name'],$_POST['prenome'] ,$_POST['roleadmine'],$_POST['password'],$_POST['matricule']);
 
-    header("location:../views/Administrateur.php");
+//     header("location:../views/Administrateur.php");
 
- } 
+//  }  -->
 
 
 

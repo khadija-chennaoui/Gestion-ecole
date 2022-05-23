@@ -73,12 +73,33 @@ class AdministrateurController{
 
 
     public function getAlladmin(){
-     
+      $admine=new Administrateur();
+      if(isset($_POST['search'])) return $admine-> afficheAdmin($_POST['search']);
+      else return $admine->afficheAdmin();
     }
     public function addadmin(){
+      if(isset($_POST['save']) ){
+        $admadd = new  Administrateur(); 
+        $nom=$_POST["nom"];
+        $prenom=$_POST["prenom"];
+        $role=$_POST["roleadmin"];
+        $password=$_POST["pwd"];
+        if($admadd->creatAdmine($nom,$prenom,$role,$password)) header('location:Administrateur');
+        }
     
     }
-    public function deleteadmin(){
+    public function deletadmin(){
+      // if(!empty($_GET['deletid']) && is_numeric($_GET['deletid'])){
+      //   $adminedel= new Administrateur();
+      //   $ressdelet=$_GET['deletid'];
+      //   $adminedel->deletadmin($ressdelet);
+      //   if($adminedel->deletadmin($ressdelet)) header('location:Administrateur');
+      //  } 
+       if(isset($_POST['deletid'])){
+        $admindelt = new Administrateur();
+        $deletid=$_POST['Matricule'];
+        if($admindelt->deletadmin($deletid)) header('location:Administrateur');
+       } 
     
     }
 

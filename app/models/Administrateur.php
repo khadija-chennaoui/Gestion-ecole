@@ -58,19 +58,18 @@ include("../models/connection.php");
             }
             
 
-        // public function loginAdmin($nomlogin,$passwordlogin){
-        //     {
+        public function loginAdmin($nomlogin,$passwordlogin){
+            {
         
-        //         $resselclogin="SELECT * FROM administrateurs WHERE WHERE `Nom`='$nomlogin' AND `Mot _de_Passe`='$passwordlogin'" ;
-        //         $resselclogin=$this->GetData($resselclogin);
-        //         // return $resselclogin->fetchAll();
-        //         if ($resselclogin->fetchAll()>0) {
-        //             header("location:../views/Administrateur.php");
+                $resselclogin="SELECT * FROM administrateurs WHERE WHERE `Nom`='$nomlogin' AND `Mot _de_Passe`='$passwordlogin'" ;
+                $resselclogin=$this->GetData($resselclogin);
+                if ($resselclogin->fetchAll()>0) {
+                    header("location:../views/Administrateur.php");
 
-        //         }
-        //     }
+                }
+            }
           
-        // }
+        }
 
     }   
 ?>
