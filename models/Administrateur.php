@@ -1,13 +1,19 @@
 <?php
-      include('models/personne.php');
-      // include("../models/personne.php");
-
- class Administrateur extends Dbconnect
+ class Administrateur extends Personne
  {
+   public $Nom;
+  public $password;
+
+  public function getpassword(){
+    return $this->password;
+}
+
+public function setpassword($password){
+   $this->password=$password;
+}
+
     public function creatAdmine($nom, $prenom, $role, $password){
-
         $reqinsert=$this->connect()->exec("INSERT INTO administrateurs (`Matricule`, `Nom`, `Prénom`, `Rôle`, `Mot _de_Passe`) VALUES (NULL,'$nom','$prenom','$role','$password')");
-
         if ($reqinsert) {
             return true;
         }else{
@@ -29,9 +35,7 @@
 
         $sql="SELECT * FROM  administrateurs ";
         return $prepare=$this->connect()->query($sql)->fetchALL();
-
       }
- 
     }
  
     public function deletadmin($iddelet){
@@ -52,9 +56,22 @@
         }else{
           return false;
 
-            }
-
+            }         
         }
-}
 
+        public function login(){
+          $exc=$this->connect()->query("SELECT * FROM `administrateurs` WHERE Nom ='$this->Nom' AND 'Mot_de_Passe' ='$this->password'");
+          $res=$exc->fetch(PDO::FETCH_ASSOC); 
+          if($exc->rowCount()!=0){       
+          $_SESSION['Nom']=$res['Nom'];
+
+        }else {
+          echo'<div class="alert alert-danger" role="alert">
+                 **Something went wrong!!**
+                   </div>';
+                       }
+     
+
+   }
+  }
 ?>

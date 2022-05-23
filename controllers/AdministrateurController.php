@@ -1,13 +1,11 @@
-
 <?php
-
 class AdministrateurController{
-
     public function getAllParent(){
          $parent=new Parents();
          if(isset($_POST['search'])) return $parent-> search($_POST['search']);
          else return $parent->Afficher();
     }
+
     public function addparent(){
       if(isset($_POST['saveparent']) ){
       $p = new Parents(); 
@@ -19,6 +17,7 @@ class AdministrateurController{
       if($p->Ajouter()) header('location:parent');
       }
     }
+    
     public function deleteparent(){
       if(isset($_POST['deletparent'])){
          $p = new Parents();
@@ -29,7 +28,7 @@ class AdministrateurController{
 
     public function updateparent(){
     if(isset($_POST['bntupdate'])){
-       $p = new Parents();
+        $p = new Parents();
         $p->setMatricule($_POST['matricule']);
         $p->setNom($_POST['nom']);
         $p->setGenre($_POST['genre']);
@@ -41,33 +40,29 @@ class AdministrateurController{
    }
   //  ------------------------------------------------------------------------
     public function getAllstudent(){
-   
     }
+
     public function addstudent(){
-    
     }
+
     public function deletestudent(){
-    
     }
 
     public function updatestudent(){
-
     }
       //  ------------------------------------------------------------------------
 
 
-    public function getAllprofesseur(){
-     
+    public function getAllprofesseur(){  
     }
+
     public function addprofesseur(){
-    
     }
+
     public function deleteprofesseurt(){
-    
     }
 
     public function updateprofesseur(){
-
     }
       //  ------------------------------------------------------------------------
 
@@ -79,17 +74,25 @@ class AdministrateurController{
     
     }
     public function deleteadmin(){
-    
+  
     }
 
     public function updateadmin(){
 
     }
-      //  ------------------------------------------------------------------------
-     
+      //  ------------------------------------------------------------------------   
       public function signin(){
-
-      }
-
-}
+        $error = "";
+        if (isset($_POST['login'])){
+          $user = new Administrateur();
+          $user->setpassword($_POST['password']);
+          $user->setNom($_POST['Nom']);
+          $user->login();
+            header('location:statistique');
+          }
+          else{
+            $error = "incorect username or password !!";    
+           }  
+          }
+        }
 ?>

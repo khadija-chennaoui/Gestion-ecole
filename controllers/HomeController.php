@@ -5,5 +5,4 @@
       include('views/'.$page.'.php');
    }
  }
-
 ?>

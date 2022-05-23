@@ -1,14 +1,10 @@
+
 <?php
 class Dbconnect
 {
-    public $host="localhost";
-    public $username="root";
-    public $password="";
-    public $database="gestion_de_ecole";
-
-    public function connect()
+    public  function connect()
     {
-        $conn = new PDO("mysql:host=$this->host; dbname=$this->database" ,$this->username ,$this->password);
+        $conn = new PDO("mysql:host=localhost; dbname=gestion_de_ecole" ,"root" ,"");
         return $conn;
     }
     public function GetData($req)
@@ -18,6 +14,5 @@ class Dbconnect
     return $this->connect()->prepare($req);
     }catch (PDOException $ex) {echo $ex->getMessage();}
   }
-
 
 }

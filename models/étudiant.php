@@ -1,7 +1,4 @@
 <?php
-
-include('models/personne.php');
-
 class Etudiant extends Personne
 {
   public function ajouteretudiant($nom, $genre, $nee, $email, $parent, $clas)

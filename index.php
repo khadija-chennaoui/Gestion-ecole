@@ -16,7 +16,7 @@ if(isset($_GET['page'])){
       include('views/includes/404.php');
     }
 }else{
-        $home->index('signup');
+        $home->index('login');
     }
 
 

@@ -19,18 +19,12 @@
         }
         
         }
-    
-
         if(isset($_POST['find'])){
 
             $search = $_POST['search'];
             $adminSearch=new Administrateur();
-            $adminSearch->afficheAdmin();
-           
-           
+            $adminSearch->afficheAdmin();  
         }
-      
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

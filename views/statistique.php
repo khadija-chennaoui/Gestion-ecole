@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,12 +22,23 @@
                         <div class="card-img-overlay">
                             <div class="mt-3 mx-3" style="background-color:rgb(255 255 254 / 61%);">
                                 <h5 class="card-title mt-5 text-dark ">Card title</h5>
-                                <p class="card-text text-dark fs-5 mx-5">250</p>
+                                <?php  
+                                
+                                public function NmbrEtudiant(){
+                                    $sql="SELECT COUNT(*) FROM etudiants ";
+                                    $stm=$this->connect()->query($sql);
+                                    $count=$stm->fetchAll();
+                                    echo $count;
+
+                                } 
+                            ?>           
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col">
                 <div class="card" class="contenant" style="width:258px;margin:12%;padding:0%;">
                     <div class="card bg-dark text-white">
@@ -35,12 +47,24 @@
 
                             <div class="mt-3 mx-3" style="background-color:rgb(255 255 254 / 61%);">
                                 <h5 class="card-title mt-5 text-dark ">Card title</h5>
-                                <p class="card-text text-dark fs-5 mx-5">250</p>
-                            </div>
+                                <p>
+
+                                    <?php  
+                                
+                                public function NmbrClass(){
+                                    $sql="SELECT COUNT(*) FROM classes ";
+                                    $stm=$this->connect()->query($sql);
+                                    $count=$stm->fetchAll();
+                                    echo $count;
+
+                                } 
+                            ?>              </p>           
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col">
                 <div class="card" class="contenant" style="width:258px;margin:12%;padding:0%;">
                     <div class="card bg-dark text-white">
@@ -48,8 +72,18 @@
                         <div class="card-img-overlay">
                             <div class="mt-3 mx-3" style="background-color:rgb(255 255 254 / 61%);">
                                 <h5 class="card-title mt-5 text-dark ">Card title</h5>
-                                <p class="card-text text-dark fs-5 mx-5">250</p>
-                            </div>
+                               <p>
+                               <?php  
+                                
+                                public function NmbrProf(){
+                                    $sql="SELECT COUNT(*) FROM professeurs ";
+                                    $stm=$this->connect()->query($sql);
+                                    $count=$stm->fetchAll();
+                                    echo $count;
+
+                                } 
+                            ?>                </p>    
+                                                </div>
                         </div>
                     </div>
                 </div>
@@ -58,13 +92,35 @@
         </div>
         <div class="d-flex justify-content-center mt-5">
             <div class="circle">
-                <div></div>
+                <div>
+
+                <?php  
+                                
+                                public function ClassEtudiant(){
+                                    $sql="SELECT COUNT(*) FROM etudiants INNER JOIN classes ON etudiants.id = classes.id ";
+                                    $stm=$this->connect()->query($sql);
+                                    $count=$stm->fetchAll();
+                                    echo $count;
+
+                                } 
+                            ?> 
+                </div>
             </div>
         </div>
         <div class="d-block mt-5 pt-4">
             <div class="d-flex justify-content-center mb-3">
                 <div class="pourcentage" style="border: 20px solid #6F42C1;"></div>
-                <p class="mx-3 mt-2">30% Homme</p>
+                <p class="mx-3 mt-2"> 
+                    <?php  
+                                
+                                public function NmbrEtudiant(){
+                                    $sql="SELECT COUNT(*) FROM etudiants group by Genre";
+                                    $stm=$this->connect()->query($sql);
+                                    $count=$stm->fetchAll();
+                                    echo $count;
+
+                                } 
+                            ?>    </p>
             </div>
             <div class="d-flex justify-content-center mb-3">
                 <div class="pourcentage"style="border: 20px solid #FD8520;"></div>

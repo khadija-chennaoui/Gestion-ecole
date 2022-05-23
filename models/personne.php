@@ -1,6 +1,4 @@
 <?php 
-include('database/Connection.php');
-
 class Personne extends Dbconnect{
 
 public $Matricule;

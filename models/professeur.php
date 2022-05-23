@@ -1,6 +1,5 @@
 <?php
-      include('models/personne.php');
-      class professeur extends Personne
+   class professeur extends Personne
 {
 
   public $class_prof;
