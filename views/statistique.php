@@ -12,8 +12,7 @@
 
 <body>
 <div class="container-fluid">
-    <div class="d-block">
-        
+    <div class="d-block">        
         <div class="row row-cols-1 row-cols-md-3 g-4 ">
             <div class="col">
                 <div class="card" class="contenant" style="width:258px;margin:12%;padding:0%;">
@@ -22,8 +21,8 @@
                         <div class="card-img-overlay">
                             <div class="mt-3 mx-3" style="background-color:rgb(255 255 254 / 61%);">
                                 <h5 class="card-title mt-5 text-dark ">Card title</h5>
-                                <?php  
                                 
+                                <?php                                  
                                 public function NmbrEtudiant(){
                                     $sql="SELECT COUNT(*) FROM etudiants ";
                                     $stm=$this->connect()->query($sql);
@@ -31,9 +30,9 @@
                                     echo $count;
 
                                 } 
-                            ?>           
-                            </div>
+                            ?>          
 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -49,8 +48,7 @@
                                 <h5 class="card-title mt-5 text-dark ">Card title</h5>
                                 <p>
 
-                                    <?php  
-                                
+                                    <?php                                 
                                 public function NmbrClass(){
                                     $sql="SELECT COUNT(*) FROM classes ";
                                     $stm=$this->connect()->query($sql);
@@ -58,7 +56,9 @@
                                     echo $count;
 
                                 } 
-                            ?>              </p>           
+                            ?>              
+                            
+                                 </p>           
                                 </div>
                         </div>
                     </div>

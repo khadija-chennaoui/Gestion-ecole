@@ -6,7 +6,6 @@ public $Nom;
 public $Genre;
 public $Adresse;
 
-
 public function getMatricule(){
     return $this->Matricule;
 }
