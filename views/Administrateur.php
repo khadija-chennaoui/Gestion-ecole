@@ -20,11 +20,17 @@
   
     
     <div class="container-fluid px-5 pt-3">
-    <form class="col-sm-6 input-group mb-3" method="POST" style="max-width:500px;">
+        <div  class="d-flex align-items-baseline  justify-content-between">
+        <form class="col-sm-6 input-group mb-3" method="POST" style="max-width:500px;">
         <a href="admin.php" class="btn "><i class="fa fa-2x fa-home" aria-hidden="true"></i></a>
         <input type="text" name="search" class="form-control" placeholder="rechercher..." aria-label="Recipient's username" aria-describedby="button-addon2">
         <button class="btn btn-outline-primary" name="find" type="submit" id="button-addon2">search</button>
     </form>
+    <div>
+     <a href="#addetud" class="btn btn-outline-primary btn-lg fw-bold" style="  color:primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter un admine <img src="https://img.icons8.com/fluency/40/000000/teacher.png"/></a>
+     </div>
+        </div>
+   
         <div class="row">
             <div class="table-wrapper">
                 <div class="table-title">
@@ -51,8 +57,7 @@
                 </thead>
                 <tbody  class="fw-bold">
                 <?php 
-                    // $admines=new AdministrateurController();
-                    //     $admines->getAlladmin();
+                   
                     $admine = new AdministrateurController();
                    $admines=$admine->getAlladmin();
                     foreach($admines as $admine){
@@ -64,7 +69,7 @@
                         <td><?= $admine[2] ?></td>
                         <td><?= $admine[3] ?></td>
                         <td><?= $admine[4] ?></td>
-                        <td>
+                        <td class="d-flex  align-items-start">
                             <button class="btn btn-outline-primary  fw-bold update" ><a href="" style="  color:primary"  data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png"/></a></button>
                             <form action="operation"   onclick="return confirm('Êtes vous sur de vouloir supprimer ??!!');" method="POST" ><button type="submit" name ="deletid" class="btn btn-outline-danger " style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="Matricule" value="<?= $admine['Matricule']?>  "><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
 
@@ -80,7 +85,6 @@
         
         </div>
          <div class="col-sm6 mt-3 " style="float: right;">
-         <a href="#addetud" class="btn btn-outline-primary btn-lg fw-bold" style="  color:primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter un admine <img src="https://img.icons8.com/fluency/40/000000/teacher.png"/></a>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

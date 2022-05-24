@@ -24,11 +24,18 @@
                         <div class="col-sm-6">
                             <h2 style="color:#28A745;font-weight: bold;">Etudiants</h2>
                         </div>
-                        <form class="col-sm-6 input-group mb-3" method="POST" style="max-width:500px;">
+                      <div  class="d-flex align-items-baseline  justify-content-between">
+                      <form class="col-sm-6 input-group mb-3" method="POST" style="max-width:500px;">
                             <a href="etudiants.php" class="btn "><i class="fa fa-2x fa-home" aria-hidden="true"></i></a>
                             <input type="text" name="search" class="form-control" placeholder="rechercher..." aria-label="Recipient's username" aria-describedby="button-addon2">
                             <button class="btn btn-outline-secondary" name="find" type="submit" id="button-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </form>
+                        <div>
+                        <a href="#addetud" class="btn btn-outline-success btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">add etudiant <img src="https://img.icons8.com/external-smashingstocks-circular-smashing-stocks/65/000000/external-add-user-world-population-day-smashingstocks-circular-smashing-stocks.png" / style="width: 40px;height: 40px;"></a>
+
+                        </div>
+                      </div>  
+                       
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -48,12 +55,15 @@
                             </tr>
                         </thead>
                         <tbody class="fw-bold">
+                            <pre>
                             <?php
                             $etudiant = new AdministrateurController();
                             $rows = $etudiant->getAllstudent();
                             if ($rows) {
                                 foreach ($rows as $id => $row) {
+                                  
                             ?>
+                            </pre>
                                     <tr>
                                         <td hidden><?php echo $row[0]; ?></td>
 
@@ -66,9 +76,9 @@
                                         <td class="text-nowrap"><?php echo $row[6]; ?></td>
                                         <td class="text-nowrap"><?php echo $row[7]; ?></td>
 
-                                        <td class="text-nowrap">
+                                        <td class="d-flex  align-items-start">
                                             <a href="" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
-                                            <form action="operation" method="POST" ><button type="submit" name ="delete" class="btn btn-outline-danger " style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="Matricule" value="<? $rows[0]?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"></button></form>    
+                                            <form action="operation" method="POST" ><button type="submit" name ="delete" class="btn btn-outline-danger " style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="Matricule" value="<?= $row[0]?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"></button></form>    
                                         </td>
                                     </tr>
                             <?php
@@ -81,7 +91,6 @@
             </div>
         </div>
         <div class="col-sm6 mt-3 " style="float: right;">
-            <a href="#addetud" class="btn btn-outline-success btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">add etudiant <img src="https://img.icons8.com/external-smashingstocks-circular-smashing-stocks/65/000000/external-add-user-world-population-day-smashingstocks-circular-smashing-stocks.png" / style="width: 40px;height: 40px;"></a>
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">

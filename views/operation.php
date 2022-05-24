@@ -18,7 +18,7 @@ $Controller->addstudent();
 $Controller->updatestudent();
 $Controller->deletestudent();
 
-  
+
     
     ?>
 

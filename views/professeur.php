@@ -28,13 +28,17 @@
                             <h2 style="color: #007BFF;font-weight: bold;">Professeurs</h2>
                         </div>
 
+                        <div  class="d-flex align-items-baseline  justify-content-between">
+                            <form class="col-sm-6 input-group mb-3" method="POST" style="max-width:500px;">
+                                <a href="professeur" class="btn "><i class="fa fa-2x fa-home" aria-hidden="true"></i></a>
+                                <input type="text" name="search" class="form-control" placeholder="rechercher..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" name="find" type="submit" id="button-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+                           <div>
+                           <a href="#addetud" class="btn btn-outline-info btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter des professeurs <img src="https://img.icons8.com/fluency/40/000000/teacher.png" /></a>
+                           </div> 
 
-                        <form class="col-sm-6 input-group mb-3" method="POST" style="max-width:500px;">
-                            <a href="professeur" class="btn "><i class="fa fa-2x fa-home" aria-hidden="true"></i></a>
-                            <input type="text" name="search" class="form-control" placeholder="rechercher..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-secondary" name="find" type="submit" id="button-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
-                        </form>
-
+                        </div>
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -66,7 +70,7 @@
                                             <td>' . $professeur['Matiere'] . '</td>
                                             <td>' . $professeur['Phone'] . '</td>
                                             
-                                            <td>
+                                            <td class="d-flex  align-items-start">
                                             <a href="#?id_prof_E='.$professeur['Matricule'].'" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary" data-bs-toggle="modal" data-bs-target="#myModel"><img  src="https://img.icons8.com/fluency/20/000000/edit-user-female.png"/></a>
                                             
                                             <form action="operation" method="POST" > <button type="submit" name="deletprof" value="' .$professeur['Matricule']. '" class="btn btn-outline-danger " data-toggle="modal"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"></button> </form>
@@ -99,7 +103,6 @@
 
         </div>
         <div class="col-sm6 mt-3 " style="float: right;">
-            <a href="#addetud" class="btn btn-outline-info btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter des professeurs <img src="https://img.icons8.com/fluency/40/000000/teacher.png" /></a>
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">

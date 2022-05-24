@@ -5,7 +5,7 @@
 
 <nav class="navbar navbar-light ">
   <div class="container-fluid" >
-    <img src="../views/img/logo.png" style="max-width:70px;" alt="">
+    <img src="./views/img/logo.png" style="max-width:70px;" alt="">
     <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
       <span class="navbar-toggler-icon"></span>
@@ -42,7 +42,7 @@
                   </li>
                 
                   <li class="nav-item btn btn-outline-light  rounded" style="margin-top:100px;" style ="display: flex;justify-content: flex-start">
-                    <a class="nav-link  "  href="signup" style="  COLOR: grey; FONT-SIZE: unset;FONT-WEIGHT: bold; font-family: monospace;">
+                    <a class="nav-link  "  href="login" style="  COLOR: grey; FONT-SIZE: unset;FONT-WEIGHT: bold; font-family: monospace;">
                     <i class="fa fa-3x fa-sign-out" aria-hidden="true" ></i><span class="fs-3"  style="margin-left: 60px;">logout</span> </a>
                   </li>
                 </ul>

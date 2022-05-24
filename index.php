@@ -6,7 +6,7 @@ require_once('./autoload.php');
 require_once('./controllers/HomeController.php');
 
 $home =new HomeController();
-$page=['Administrateur','etudiants','parent','professeur','statistique','operation'];
+$page=['Administrateur','etudiants','parent','professeur','statistique','operation','login'];
 
 if(isset($_GET['page'])){
     if(in_array($_GET['page'],$page)){

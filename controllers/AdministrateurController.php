@@ -65,10 +65,16 @@ class AdministrateurController{
     }
   }
   public function deletestudent(){
-    $mode =new Etudiant();
-    if(isset($_POST['delete'])){
-      if( $mode->deletetudiant($_POST['Matricule']))header('location:etudiants');
+    if(isset($_POST['delete']))
+        {   
+
+          $mode =new Etudiant();
+          $pro=$_POST['Matricule'];
+      if($mode->deletetudiant($pro)){
+      header('location:etudiants');
+
     }
+  }
   }
 
   public function updatestudent(){
