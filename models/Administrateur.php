@@ -18,7 +18,8 @@
      if(isset($_POST['search']))
      {
         $search=$_POST['search'];
-        $query="SELECT * FROM administrateurs WHERE Matricule LIKE ? OR Nom LIKE ? OR Prénom LIKE ? OR Rôle LIKE ? " ;
+        $query="SELECT * FROM administrateurs WHERE Matricule LIKE ? OR Nom LIKE ? OR Prénom LIKE ? OR Rôle LIKE ?  " ;
+        // SELECT * FROM parents ORDER BY Matricule desc
         $query=$this->GetData($query);
         $query->execute(['%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%']);
         return $query->fetchAll();

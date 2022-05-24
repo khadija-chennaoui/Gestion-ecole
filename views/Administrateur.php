@@ -67,7 +67,7 @@
                         <td><?= $admine['Mot _de_Passe'] ?></td>
                         <td>
                             <button class="btn btn-outline-primary  fw-bold update" ><a href="" style="  color:primary"  data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png"/></a></button>
-                            <form action="operation"   onclick="return confirm('Êtes vous sur de vouloir supprimer ??!!');" method="POST" ><button type="submit" name ="deletid" class="btn btn-outline-danger " style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="Matricule" value="<?= $admine['Matricule']?>  "><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
+                            <form action="operation"   onclick="return confirm('Êtes vous sur de vouloir supprimer ??!!');" method="POST" ><button type="submit" name ="deletid" class="btn btn-outline-danger "  data-toggle="modal"><input type="text" hidden name="Matricule" value="<?= $admine['Matricule']?>  "><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
 
                         </td>
                     </tr>
@@ -93,12 +93,12 @@
                     <form class="form-container"  action="operation" method="POST" >  
                                     <div class="mb-3 fw-bold" >
                                         <label for="exampleFormControlInput1" class="form-label">Nom </label>
-                                        <input type="text" class="form-control" id="nom" name="nom"    value="<?= $nom?>"   placeholder="Enter name complet" style="margin-bottom: 32px;">
+                                        <input type="text" class="form-control" id="nom" name="nom"    placeholder="Enter name complet" style="margin-bottom: 32px;">
                                     </div>
                            
                                     <div class="mb-3  fw-bold"  >
                                         <label for="exampleFormControlInput1" class="form-label">Prénom</label>
-                                        <input type="text" class="form-control" name="prenom"  value="<?= $prenom ?>"   placeholder="Enter le Prénom">
+                                        <input type="text" class="form-control" name="prenom"     placeholder="Enter le Prénom">
              
                                     </div>
                            
@@ -113,13 +113,13 @@
                                     </div>
                                     <div class="mb-3  fw-bold"  >
                                         <label for="exampleFormControlInput1" class="form-label">Mot de Passe</label>
-                                        <input type="password" class="form-control" id="pwd" name="pwd"  value="<?= $pswrd ?>"   placeholder="Mot de Passe">
+                                        <input type="password" class="form-control" id="pwd" name="pwd"   placeholder="Mot de Passe">
                                     
                                     </div>
          
                                 <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="submit" name="save" class="btn btn-primary mT-3">Save</button>
+                                        <button type="button" class=" btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" name="save" class="btn btn-primary ">Save</button>
                                 </div>
                             </form>              
                     </div>
@@ -177,8 +177,8 @@
                                     </div>
          
                                 <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="submit" name="updatebtn" class="btn btn-primary mT-3">update</button>
+                                        <button type="button" class=" btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" name="updatebtn" class="btn btn-primary ">update</button>
                                 </div>
                             </form>              
                     </div>
