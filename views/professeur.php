@@ -118,17 +118,20 @@
 
                                 <div class="mb-3  fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Genre</label>
-                                    <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter le Genre">
+                                    <select type="text" class="form-control" id="genre" name="genre" placeholder="Enter le class">
+                                    <option value="Femme">Femme</option>
+                                    <option value="Homme">Homme</option>
+                                    </select>
                                     <p id="img2" style="margin-bottom: -1rem;"></p>
                                     <span id="genreid" style="color:red; font-weight: bold;"></span>
                                 </div>
 
                                 <div class="mb-3  fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">class</label>
-                                    <select type="text" class="form-control" id="class" name="class" placeholder="Enter le class">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    </select>
+                                    <select class="form-control" type="text" id="class" name="class">
+                                    <?php $etudiant=new AdministrateurController(); $rows =$etudiant->getclass();  foreach ($rows as  $row) { ?>
+                                            <option value="<?php echo $row[0]; ?>"><?php echo $row[1]; } ?> </option>
+                                </select>
                                     <p id="img2" style="margin-bottom: -1rem;"></p>
                                     <span id="classid" style="color:red; font-weight: bold;"></span>
                                 </div>
@@ -187,7 +190,10 @@
                                     </div>
                                     <div class="mb-3  fw-bold"  >
                                         <label for="exampleFormControlInput1" class="form-label">Genre</label>
-                                        <input type="text" class="form-control" name="gnr" id="gnr"    placeholder="Enter le name">
+                                        <select type="text" class="form-control" id="gnr" name="gnr" placeholder="Enter le class">
+                                    <option value="Femme">Femme</option>
+                                    <option value="Homme">Homme</option>
+                                    </select>
              
                                     </div>
                            

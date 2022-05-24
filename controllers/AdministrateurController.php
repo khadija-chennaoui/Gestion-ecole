@@ -46,10 +46,8 @@ class AdministrateurController{
 
   }
   public function getclass(){
-    $mode = new Etudiant();
-    
-    return $mode->afficheClass();
-    
+    $mode = new Etudiant();  
+    return $mode->afficheClass();  
   }
 
   public function addstudent(){
@@ -88,11 +86,14 @@ class AdministrateurController{
         }
      }
     }
-    public function countstudent(){
-      $mode = new Etudiant();
-     return $mode->NmbrEtudiant();
-
-     }
+    public function GenreEtudiantF(){
+      $mode = new Etudiant();  
+      return $mode->GenreEtudiantF();  
+    }
+    public function GenreEtudiantH(){
+      $mode = new Etudiant();  
+      return $mode->GenreEtudiantF();  
+    }
       //  ------------------------------------------------------------------------
 
 
@@ -153,8 +154,17 @@ class AdministrateurController{
       $edit->editProfessur($id,$Nom,$Genre,$matière,$phone,$class_prof);
   
   } 
-  
       }
+      public function GenreprofesseursF(){
+        $mode = new professeur();  
+        return $mode->GenreprofesseursF();  
+      }
+      public function GenreprofesseursH(){
+        $mode = new professeur();  
+        return $mode->GenreprofesseursH();  
+      }
+
+   
       //  ------------------------------------------------------------------------
 
 

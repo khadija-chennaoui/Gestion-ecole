@@ -71,4 +71,13 @@
       echo $ex->getMessage();
     }
   }
+
+public function GenreprofesseursF(){
+  $stm=$this->connect()->query("Select Genre from professeurs where Genre='Femme'");
+return  $stm->rowCount();
+} 
+public function GenreprofesseursH(){
+$stm=$this->connect()->query("Select Genre from professeurs where Genre='Homme'");
+return  $stm->rowCount();
+} 
 }

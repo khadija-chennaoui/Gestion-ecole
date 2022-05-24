@@ -43,12 +43,14 @@ class Etudiant extends Personne
          return $prepare=$this->connect()->query($sql)->fetchALL();
   }
 
-  public function NmbrEtudiant(){
- 
-    $stm=$this->connect()->query("SELECT COUNT(*) FROM etudiants");
+  public function GenreEtudiantF(){
+    $stm=$this->connect()->query("Select Genre from etudiants where Genre='Femme'");
   return  $stm->rowCount();
-  
-
 } 
+public function GenreEtudiantH(){
+  $stm=$this->connect()->query("Select Genre from etudiants where Genre='Homme'");
+return  $stm->rowCount();
+} 
+
 
  }

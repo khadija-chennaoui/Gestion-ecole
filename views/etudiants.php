@@ -98,8 +98,8 @@
                                 <div class="mb-3  fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Genre</label><br>
                                     <select name="Genre" class="form-control" id="Genre" required data-parsley-trigger="change">
-                                        <option value="admine edudient">Femme</option>
-                                        <option value="admine gestion">Homme</option>
+                                        <option value="Femme">Femme</option>
+                                        <option value="Homme">Homme</option>
                                     </select>
                                 </div>
                                 <div class="mb-3  fw-bold">
@@ -158,8 +158,8 @@
                                 <div class="mb-3 fw-bold">
                                     <label for="exampleFormControlInput1" class="form-label">Genre</label>
                                     <select name="gen" class="form-control" id="gen" >
-                                        <option value="admine edudient">Femme</option>
-                                        <option value="admine gestion">Homme</option>
+                                        <option value="Femme">Femme</option>
+                                        <option value="Homme">Homme</option>
                                     </select>
                                 </div>
                                 <div class="mb-3 fw-bold">

@@ -1,3 +1,4 @@
+<?php $stati = new AdministrateurController();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,8 +21,8 @@
                         <img src="views/img/profs.jpg" class="card-img" alt="..." width="300px">
                         <div class="card-img-overlay">
                             <div class="mt-3 mx-3" style="background-color:rgb(255 255 254 / 61%);">
-                                <h5 class="card-title mt-5 text-dark ">Card title</h5>
-                                <p class="card-text text-dark fs-5 mx-5">250</p>
+                                <h5 class="card-title mt-5 text-dark ">Professeur</h5>
+                                <p class="card-text text-dark fs-5 mx-5"><?php echo count($stati->getAllstudent());?></p>
                             </div>
                         </div>
                     </div>
@@ -34,8 +35,8 @@
                         <div class="card-img-overlay">
 
                             <div class="mt-3 mx-3" style="background-color:rgb(255 255 254 / 61%);">
-                                <h5 class="card-title mt-5 text-dark ">Card title</h5>
-                                <p class="card-text text-dark fs-5 mx-5">250</p>
+                                <h5 class="card-title mt-5 text-dark ">Etudiants</h5>
+                                <p class="card-text text-dark fs-5 mx-5"><?php echo count($stati->getAllprofesseur());?></p>
                             </div>
                         </div>
                     </div>
@@ -47,8 +48,8 @@
                         <img src="views/img/class.jpg" class="card-img" alt="..." width="300px">
                         <div class="card-img-overlay">
                             <div class="mt-3 mx-3" style="background-color:rgb(255 255 254 / 61%);">
-                                <h5 class="card-title mt-5 text-dark ">Card title</h5>
-                                <p class="card-text text-dark fs-5 mx-5">250</p>
+                                <h5 class="card-title mt-5 text-dark ">Class</h5>
+                                <p class="card-text text-dark fs-5 mx-5"><?php echo count($stati->getclass());?></p>
                             </div>
                         </div>
                     </div>
@@ -76,8 +77,10 @@
 src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
 <script>
-var xValues = ["male","female"];
-var yValues = [7,8];
+    <?php $femme = $stati->GenreprofesseursF()+$stati->GenreEtudiantF();
+           $Homme = $stati->GenreprofesseursH()+$stati->GenreEtudiantH() ?>
+var xValues = ["Femme","Homme"];
+var yValues = [<?= $femme?>,<?= $Homme?>];
 var colors=['red','orange'];
 
 new Chart("myChart", {
@@ -90,20 +93,19 @@ new Chart("myChart", {
       data: yValues
     }]
   },
-  options:{}
 });
 
 
-<?php $stati = new AdministrateurController();?>
+
 
 
 </script>
 
 
 <script>
-var xValues = ["Etudiabt", "France", "Spain", "USA", "Argentina"];
-var yValues = [<?php echo $stati->countstudent();?>, 49, 44, 24, 15];
-var barColors = ["red", "green","blue","orange","brown"];
+var xValues = ["Etudiant", "Professeur", "Class"];
+var yValues = [<?php echo count($stati->getAllstudent());?>, <?php echo count($stati->getAllprofesseur());?>, <?php echo count($stati->getclass());?>,0];
+var barColors = ["red", "green","blue"];
 
 new Chart("Chart", {
   type: "bar",
@@ -118,7 +120,7 @@ new Chart("Chart", {
     legend: {display: false},
     title: {
       display: true,
-      text: "World Wine Production 2018"
+      text: "Ecole"
     }
   }
 });
