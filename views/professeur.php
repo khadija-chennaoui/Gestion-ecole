@@ -203,8 +203,8 @@
                                     <div class="mb-3  fw-bold"  >
                                         <label for="exampleFormControlInput1" class="form-label">Class</label>
                                         <select type="text" class="form-control" name="cl" id="cl"    placeholder="Enter le Prénom">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
+                                            <?php $rows =$etudiant->getclass();  foreach ($rows as  $row) { ?>
+                                            <option value="<?php echo $row[0]; ?>"><?php echo $row[1]; } ?> </option>
                                         </select>
                                     </div>
                            

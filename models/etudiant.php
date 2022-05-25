@@ -11,7 +11,7 @@ class Etudiant extends Personne
   {
     if (isset($_POST['search'])) {
       $search = $_POST['search'];
-      $query = "SELECT * FROM etudiants, parents, classes WHERE etudiants.Matricule LIKE ? OR etudiants.Nom_completE LIKE ? OR etudiants.Genre LIKE ? OR etudiants.Date_naissance LIKE ? OR etudiants.Email LIKE ? OR parents.Nom_complet LIKE ?  OR parents.Adresse LIKE ? OR classes.nom_class LIKE ?";
+      $query = "SELECT * FROM etudiants, parents, classes WHERE etudiants.Matricule_parent=parents.Matricule and etudiants.Matricule LIKE ? OR etudiants.Nom_completE LIKE ? OR etudiants.Genre LIKE ? OR etudiants.Date_naissance LIKE ? OR etudiants.Email LIKE ? OR parents.Nom_complet LIKE ?  OR parents.Adresse LIKE ? OR classes.nom_class LIKE ? LIMIT 1 ";
       $query = $this->GetData($query);
       $query->execute(['%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%', '%' . $search . '%']);
       return $query->fetchAll();
@@ -19,6 +19,9 @@ class Etudiant extends Personne
       $query = "SELECT etudiants.Matricule,etudiants.Nom_completE,etudiants.Genre,etudiants.Date_naissance,etudiants.Email,parents.Nom_complet,parents.Adresse,classes.nom_class FROM etudiants,parents,classes WHERE etudiants.Matricule_parent=parents.Matricule and etudiants.id_class=classes.id ORDER BY `etudiants`.`Matricule` DESC ";
       return $prepare = $this->connect()->query($query)->fetchALL();
     }
+  }
+  public function find($search){
+
   }
   public function updatetudiant($name, $dateN, $genre, $email, $class,$matp, $matricule)
   {

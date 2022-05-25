@@ -43,7 +43,6 @@ class AdministrateurController{
   public function getAllstudent(){
     $mode = new Etudiant();
     return $mode->affichetudiant();
-
   }
   public function getclass(){
     $mode = new Etudiant();  

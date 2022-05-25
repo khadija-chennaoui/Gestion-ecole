@@ -20,7 +20,7 @@
                     <div class="card bg-dark text-white">
                         <img src="views/img/profs.jpg" class="card-img" alt="..." width="300px">
                         <div class="card-img-overlay">
-                            <div class="mt-3 mx-3" style="background-color:rgb(255 255 254 / 61%);">
+                            <div class="mt-2 mx-3" style="background-color:rgb(255 255 254 / 61%);">
                                 <h5 class="card-title mt-5 text-dark ">Professeur</h5>
                                 <p class="card-text text-dark fs-5 mx-5"><?php echo count($stati->getAllstudent());?></p>
                             </div>
@@ -34,7 +34,7 @@
                         <img src="views/img/eleves.jpg" class="card-img" alt="..." width="300px">
                         <div class="card-img-overlay">
 
-                            <div class="mt-3 mx-3" style="background-color:rgb(255 255 254 / 61%);">
+                            <div class="mt-2 mx-3" style="background-color:rgb(255 255 254 / 61%);">
                                 <h5 class="card-title mt-5 text-dark ">Etudiants</h5>
                                 <p class="card-text text-dark fs-5 mx-5"><?php echo count($stati->getAllprofesseur());?></p>
                             </div>
@@ -47,7 +47,7 @@
                     <div class="card bg-dark text-white">
                         <img src="views/img/class.jpg" class="card-img" alt="..." width="300px">
                         <div class="card-img-overlay">
-                            <div class="mt-3 mx-3" style="background-color:rgb(255 255 254 / 61%);">
+                            <div class="mt-2 mx-3" style="background-color:rgb(255 255 254 / 61%);">
                                 <h5 class="card-title mt-5 text-dark ">Class</h5>
                                 <p class="card-text text-dark fs-5 mx-5"><?php echo count($stati->getclass());?></p>
                             </div>
@@ -57,7 +57,7 @@
             </div>
 
         </div>
-        <div class="d-flex justify-content-center mt-5">
+        <div class="d-flex justify-content-center mt-1">
              <div class="  col-6 ">
         <canvas id="Chart" style="width:100%;max-width:700px ;"></canvas>
 

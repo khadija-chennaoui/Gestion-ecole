@@ -26,7 +26,7 @@
                         </div>
                       <div  class="d-flex align-items-baseline  justify-content-between">
                       <form class="col-sm-6 input-group mb-3" method="POST" style="max-width:500px;">
-                            <a href="etudiants.php" class="btn "><i class="fa fa-2x fa-home" aria-hidden="true"></i></a>
+                            <a href="etudiants" class="btn "><i class="fa fa-2x fa-home" aria-hidden="true"></i></a>
                             <input type="text" name="search" class="form-control" placeholder="rechercher..." aria-label="Recipient's username" aria-describedby="button-addon2">
                             <button class="btn btn-outline-secondary" name="find" type="submit" id="button-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </form>
@@ -152,7 +152,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Ajouter un Admine </h5>
+                            <h5 class="modal-title" id="exampleModalLabel">UPDATE </h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
