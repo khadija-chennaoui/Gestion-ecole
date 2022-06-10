@@ -1,10 +1,10 @@
 <?php
 
-class Etudiant extends Personne
+class Etudiant extends Dbconnect
 {
-  public function ajouteretudiant($nom, $genre, $nee, $email, $parent, $clas)
+  public function ajouteretudiant($image, $nom, $prix)
   {
-    $query = "INSERT INTO etudiants VALUES(NULL,'$nom','$genre','$nee','$email','$parent','$clas')";
+    $query = "INSERT INTO produits VALUES(NULL,'$image','$nom','$prix')";
    return $this->connect()->query($query);
   }
   public function affichetudiant()
@@ -38,9 +38,6 @@ class Etudiant extends Personne
    return $this->connect()->query($query);
    
   }
-
- 
-
   public function afficheClass(){
     $sql="SELECT * FROM  classes";
          return $prepare=$this->connect()->query($sql)->fetchALL();

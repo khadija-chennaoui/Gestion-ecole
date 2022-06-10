@@ -16,10 +16,7 @@ function autoload($class){
             require_once $file;
 
         }
-        if(file_exists('views/' . $class . '.php'))
-		{
-			require_once('models/' . $class . '.php');
-		}
+    
 
     }
   

@@ -4,13 +4,13 @@ class AdministrateurController{
   
 
     public function getAllParent(){
-         $parent=new Parents();
+         $parent=new produit();
          if(isset($_POST['search'])) return $parent-> search($_POST['search']);
          else return $parent->Afficher();
     }
     public function addparent(){
       if(isset($_POST['saveparent']) ){
-      $p = new Parents(); 
+      $p = new produit(); 
       $p->setNom($_POST['nom']);
       $p->setGenre($_POST['genre']);
       $p->setJob($_POST['Job']);
@@ -21,7 +21,7 @@ class AdministrateurController{
     }
     public function deleteparent(){
       if(isset($_POST['deletparent'])){
-         $p = new Parents();
+         $p = new produit();
          $p->setMatricule($_POST['Matricule']);
          if($p->delete()) header('location:parent');
         } 
@@ -169,11 +169,8 @@ class AdministrateurController{
         return $mode->GenreprofesseursH();  
       }
 
-   
       //  ------------------------------------------------------------------------
 
-
-  
       public function getAlladmin(){
         $admines=new Administrateur();
         return  $admines->afficheAdmin();       

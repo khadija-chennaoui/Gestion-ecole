@@ -1,24 +1,21 @@
 <?php
 
+$Controller = new ProduitController();
+$Controller->addproduit();
+$Controller->deletproduit();
+$Controller->updateproduit();
 
-$Controller = new AdministrateurController();
-$Controller->updateparent();
-$Controller->deleteparent();
-$Controller->addparent();
+if (isset($POST['submit'])) {
+$file = $_FILES['image'];
+$fileName = $_FILES['image']['name'];
+// $fileExt = explode('.',$fileName);
+// $fileActualExt = strtolower(end($fileExt));
+// $allowed = array('jpg' ,'jpeg','png','pdf','jfif');
+// if (in_array($fileActualExt,$allowed)) {
+//     echo "yes";
 
-$Controller->updateadmin();
-$Controller->addadmin();
-$Controller->deleteadmin();
-  
-$Controller->deleteprofesseur();   
-$Controller->addprofesseur();
-$Controller->updateprofesseur();
-
-$Controller->addstudent();
-$Controller->updatestudent();
-$Controller->deletestudent();
+// }
 
 
-    
-    ?>
+}
 
