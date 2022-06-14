@@ -1,8 +1,6 @@
 <?php
  class produits  extends Dbconnect
  {
-   public $job;
-   public $phone;
    public $id;
    public $image;
    public $nom;
@@ -15,7 +13,7 @@
    public function getimage(){
        return $this->image;
    }
-   
+  
    public function getnom(){
        return $this->nom;
    }

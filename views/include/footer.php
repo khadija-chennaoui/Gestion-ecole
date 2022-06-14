@@ -6,7 +6,7 @@
                     <div class="main_footer d-flex justify-content-between align-items-center">
                         <div class="footer_left">
                             <div class="footer_logo">
-                                <a href="index.php"><img src="views/assets/img/logo/jdid.png" alt=""></a>
+                                <a href="index"><img src="views/assets/img/logo/jdid.png" alt=""></a>
                             </div>
                             <div class="footer_social">
                                 <ul class="d-flex">

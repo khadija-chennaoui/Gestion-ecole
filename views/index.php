@@ -38,7 +38,7 @@
                                     <div class="slider_text_shape">
                                         <img src="views/assets/img/slider/slider-text-shape.png" alt="">
                                         <div class="slider_btn">
-                                            <a class="btn btn-link" href="shop-left-sidebar.php">ACHETEZ MAINTENANT</a>
+                                            <a class="btn btn-link">ACHETEZ MAINTENANT</a>
                                         </div>
                                     </div>
                                 </div>
@@ -46,21 +46,6 @@
                                 <div class="slider_thumb">
                                     <!-- <img src="assets/img/slider/slider-shape1.png" alt=""> -->
                                     <img src="views/assets/img/slider/charming-woman-with-curly-hairstyle-make-up-studio_copy.jpg"alt="">
-                                </div>
-                            </div>
-                            <div class="single_slider swiper-slide d-flex align-items-center">
-                                <div class="slider_text">
-                                    <h2>Créer votre bijou personnalisé</h2>
-                                    <div class="slider_text_shape">
-                                        <img src="views/assets/img/slider/slider-text-shape.png" alt="">
-                                        <div class="slider_btn">
-                                            <a class="btn btn-link" href="shop-left-sidebar.php">ACHETEZ MAINTENANT</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="slider_thumb">
-                                    <img class="rounded" src="views/assets/img/slider/Sans titre.png"alt="">
                                 </div>
                             </div>
                         </div>
@@ -132,17 +117,8 @@
                                 <article class="single_product wow fadeInUp">
                                     <figure>
                                         <div class="product_thumb">
-                                            <a href="single-product.php"><img src="views/assets/img/product/R3_1400x.webp" alt=""></a>
+                                            <a href="single-product.php"><img src="views/assets/img/product/p2.png" alt=""></a>
                                         </div>
-                                        <figcaption class="product_content">
-                                            <h4><a href="single-product.php">Tufted accent chair with wood legs,Beige</a></h4>
-                                            <div class="price_box">
-                                                <span class="current_price">$129.99</span>
-                                            </div>
-                                            <div class="product_variant_quantity d-flex align-items-center">
-                                                <button class="btn btn-link" type="submit">ACHETEZ</button>  
-                                            </div>
-                                        </figcaption>
                                     </figure>
                                 </article>
                             </div>
@@ -150,18 +126,9 @@
                                 <article class="single_product wow fadeInUp">
                                     <figure>
                                         <div class="product_thumb">
-                                            <a href="single-product.php"><img src="views/assets/img/product/HIBRIDE-Elegant-Leaf-Shape-Gold-Color-Micro-Zirconia-Pave-Dubai-Wedding-Jewelry-Sets-For-Women-collares.jpg_Q90.jpg_.jfif"alt=""></a>
+                                            <a href="single-product.php"><img src="views/assets/img/product/p5.png"alt=""></a>
                                         </div>
-                                        <figcaption class="product_content">
-                                            <h4><a href="single-product.php">Kendal Dark Teal Fabric Accent Chair</a>
-                                            </h4>
-                                            <div class="price_box">
-                                                <span class="current_price">$129.99</span>
-                                            </div>
-                                            <div class="product_variant_quantity d-flex align-items-center">
-                                                <button class="btn btn-link" type="submit">ACHETEZ</button>  
-                                            </div>
-                                        </figcaption>
+                                      
                                     </figure>
                                 </article>
                             </div>
@@ -169,18 +136,8 @@
                                 <article class="single_product wow fadeInUp">
                                     <figure>
                                         <div class="product_thumb">
-                                            <a href="single-product.php"><img src="views/assets/img/product/face-of-the-beautiful-sexy-woman-with-black-nails-and-pink-lips-sexy-girl-with-fashion-makeup.jpg"alt=""></a>
+                                            <a href="single-product.php"><img src="views/assets/img/product/p7.png"alt=""></a>
                                         </div>
-                                        <figcaption class="product_content">
-                                            <h4><a href="single-product.php"> Contemporary Round Living Room Coffee</a>
-                                            </h4>
-                                            <div class="price_box">
-                                                <span class="current_price">$129.99</span>
-                                            </div>
-                                            <div class="product_variant_quantity d-flex align-items-center">
-                                                <button class="btn btn-link" type="submit">ACHETEZ</button>  
-                                            </div>
-                                        </figcaption>
                                     </figure>
                                 </article>
                             </div>
@@ -188,27 +145,15 @@
                                 <article class="single_product wow fadeInUp">
                                     <figure>
                                         <div class="product_thumb">
-                                            <a href="single-product.php"><img src="views/assets/img/product/woman-demonstrating-golden-oriental-style-jewelry.jpg"alt=""></a>
+                                            <a href="single-product.php"><img src="views/assets/img/product/p1.png"alt=""></a>
                                         </div>
-                                        <figcaption class="product_content">
-                                            <h4><a href="single-product.php">Kendal Dark Teal Fabric Accent Chair</a>
-                                            </h4>
-                                            <div class="price_box">
-                                                <span class="current_price">$129.99</span>
-                                            </div>
-                                            <div class="product_variant_quantity d-flex align-items-center">
-                                                <button class="btn btn-link" type="submit">ACHETEZ</button>  
-                                            </div>
-                                        </figcaption>
                                     </figure>
                                 </article>
                             </div>
-                            
-                
                         </div>
                     </div>
                     <div class="product_variant_quantity d-flex align-items-center">
-                        <button class="btn btn-link " type="submit" style="left: 99px;text-align: center; margin-top: 103px;color: #dee2e5; background: darkgoldenrod;"><a href="shop-left-sidebar.php">Tout Les Produits</a> </button>  
+                        <button class="btn btn-link" type="submit" style="left: 99px;text-align: center; margin-top: 103px;color: #dee2e5; background: darkgoldenrod;"><a href="shop-left-sidebar.php">Consulter</a> </button>  
                     </div>
                 </div>    
             </div>
@@ -364,13 +309,10 @@
                         <article class="single_blog wow fadeInUp">
                             <figure>
                                 <div class="blog_thumb">
-                                    <a href="blog-details.php"><img src="views/assets/img/blog/miel.png" alt=""></a>
+                                    <a ><img src="views/assets/img/blog/miel.png" alt=""></a>
                                 </div>
                                 <figcaption class="blog_content">
-                                    <h3><a href="blog-details.php">L'impact de Le luxe sur l'écologie </a></h3>
-                                    <div class="blog_footer">
-                                        <a class="btn btn-link" href="blog-details.php">Apprendre encore plus</a>
-                                    </div>
+                                    <h3><a>L'impact de Le luxe sur l'écologie </a></h3>
                                 </figcaption>
                             </figure>
                         </article>
@@ -379,15 +321,11 @@
                         <article class="single_blog wow fadeInUp">
                             <figure>
                                 <div class="blog_thumb">
-                                    <a href="blog-details.php"><img src="views/assets/img/blog/diamo.png" alt=""></a>
+                                    <a><img src="views/assets/img/blog/diamo.png" alt=""></a>
                                 </div>
                                 <figcaption class="blog_content">
-                                    <h3><a href="blogdetail1.php">Les étapes de la création de bijoux </a>
+                                    <h3><a>Les étapes de la création de bijoux </a>
                                     </h3>
-                                   
-                                    <div class="blog_footer">
-                                        <a class="btn btn-link" href="blogdetail1.php">Apprendre encore plus</a>
-                                    </div>
                                 </figcaption>
                             </figure>
                         </article>
@@ -396,13 +334,10 @@
                         <article class="single_blog wow fadeInUp">
                             <figure>
                                 <div class="blog_thumb">
-                                    <a href="blog-details.php"><img src="views/assets/img/blog/z3ra.png" alt=""></a>
+                                    <a ><img src="views/assets/img/blog/z3ra.png" alt=""></a>
                                 </div>
                                 <figcaption class="blog_content">
-                                    <h3><a href="blog-details.php">Quel est le lien entre bijoux et santé ?</a></h3>
-                                    <div class="blog_footer">
-                                        <a class="btn btn-link" href="blogdetail3.php">Apprendre encore plus</a>
-                                    </div>
+                                    <h3><a h>Quel est le lien entre bijoux et santé ?</a></h3>
                                 </figcaption>
                             </figure>
                         </article>

@@ -88,7 +88,8 @@
                                                         <span class="current_price"><?php echo $rows['3']?> DH</span>
                                                     </div>
                                                     <div class="product_variant_quantity d-flex align-items-center">
-                                                        <a class="btn btn-link" href="https://api.whatsapp.com/send?phone=2120616825633&text=hello" type="submit">ACHETEZ</a>  
+                                                        <form action="operation" method="POST"><button class="btn btn-link"  type="submit" name="acheter" >ACHETEZ</button></form>
+                                                          
                                                     </div>
                                                 </figcaption>
                                             </figure>

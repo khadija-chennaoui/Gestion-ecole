@@ -31,15 +31,23 @@
             <table class="table table-hover">
               <thead>
                 <tr>
-                  <th scope="col">E-mail</th>
+                <th scope="col">Nom Complet</th>  
+                <th scope="col">E-mail</th>
                   <th scope="col">Password</th>
                 </tr>
               </thead>
               <tbody>
+              <?php $clientcontrol = new ComptesController();
+                $client = $clientcontrol->getClient();
+                foreach ($client as $rows) {
+                ?>
                 <tr>
-                  <td>Khadija@gmail.com</td>
-                  <td>.........</td>
+                <td hidden data-target="id"><?= $rows['id']; ?></td>
+                <td><?= $rows['nom']?></td>  
+                <td><?= $rows['email']?></td>
+                  <td><?= $rows['PasswordC']?></td>
                 </tr>
+                <?php } ?>
               </tbody>
             </table>
           </div>

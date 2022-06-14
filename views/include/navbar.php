@@ -3,7 +3,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="index.php"><img src="views/assets/img/logo/jdid.png" alt=""></a>
+    <a class="navbar-brand" href="index"><img src="views/assets/img/logo/jdid.png" alt=""></a>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -17,8 +17,9 @@
         </li>
       </ul>
       <form class="d-flex">
-        <a class="nav-link link-dark fs-4 mx-4" href="compte">Me Connecter</a>
+        <a class="nav-link link-dark fs-4 mx-4" href="comptes">Me Connecter</a>
       </form>
+      
     </div>
   </div>
 </nav>

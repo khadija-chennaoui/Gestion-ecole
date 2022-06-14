@@ -3,7 +3,7 @@
       <i class=''></i>
       <span class="logo_name">Admin</span>
     </div>
-    <ul class="nav-links" style="margin-left: -28px;" >
+    <ul class="nav-links" style="margin-left:-28px;" >
       <li>
         <a href="dash" >
           <i class='bx bx-grid-alt'></i>
@@ -30,7 +30,7 @@
       </li>
     
       <li class="log_out">
-        <a href="#">
+        <a href="index">
           <i class='bx bx-log-out'></i>
           <span class="links_name">Log out</span>
         </a>

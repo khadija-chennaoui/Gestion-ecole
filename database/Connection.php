@@ -1,7 +1,6 @@
 <?php
 class Dbconnect
 {
-   
     public  function connect()
     {
         $conn = new PDO("mysql:host=localhost; dbname=kadi_chen" ,"root" ,"");

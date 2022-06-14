@@ -13,12 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-
-
- 
-
-
+  <link rel="stylesheet" type="text/css" href="http://parsleyjs.org/src/parsley.css" />
 </head>
 
 <body>
@@ -60,7 +55,7 @@
                       <a href="" class="fa fa-refresh fs-2 link-info update"  style="color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"  value="<?= $rows['id'] ?>"></a>
                     </td>
                     <td>
-                      <form  action="operation" method="POST"><button type="submit" name="deletproduit" class="fa fa-trash fs-2 link-danger" data-toggle="modal"><input type="text" hidden name="id" value="<?= $rows['id'] ?>"></button></form>
+                      <form action="operation" method="POST"><button type="submit" name="deletproduit" class="fa fa-trash fs-2 link-danger" data-toggle="modal"><input type="text" hidden name="id" value="<?= $rows['id'] ?>"></button></form>
                     </td>
                   </tr>
                 <?php } ?>
@@ -83,22 +78,22 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action="operation" method="POST" >
+            <form action="operation" method="POST" data-parsley-validate>
               <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
-                <input class="form-control" name="image" type="file" id="image">
+                <input class="form-control" name="image" type="file" id="image" required data-parsley-trigger="change">
               </div>
               <div class="mb-3">
                 <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom">
+                <input type="text" class="form-control" id="nom" name="nom" data-parsley-length="[4, 20]" data-parsley-trigger="change" required>
               </div>
               <div class="mb-3">
                 <label for="prix" class="form-label">Prix</label>
-                <input type="text" class="form-control" id="prix" name="prix">
+                <input type="text" class="form-control" id="prix" name="prix" required data-parsley-trigger="change" data-parsley-type="digits">
               </div>
               <div class="mb-3">
                 <label for="quanti" class="form-label">Quantité</label>
-                <input type="number" class="form-control" id="quanti" name="quanti">
+                <input type="text" class="form-control" id="quanti" name="quanti" required data-parsley-type="digits" data-parsley-trigger="change">
               </div>
               <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -118,28 +113,28 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action="operation" method="POST">
+            <form action="operation" method="POST" data-parsley-validate>
             <div class="mb-3">
                 <input class="form-control" hidden type="text" name="id" id="id" >
               </div>
              
               <div class="mb-3">
                 <label for="image" class="form-label">nom</label>
-                <input class="form-control" type="text" name="nom" id="nomproduit" >
+                <input class="form-control" type="text" name="nom" id="nomproduit" data-parsley-length="[4, 20]" required data-parsley-trigger="change">
               </div>
               <div class="mb-3">
                 <label for="prix" class="form-label">Prix</label>
-                <input type="text" class="form-control"name="prix" id="prixp">
+                <input type="text" class="form-control"name="prix" id="prixp" required data-parsley-trigger="change" data-parsley-type="digits">
               </div>
               <div class="mb-3">
                 <label for="quanti" class="form-label">Quantité</label>
-                <input type="number" class="form-control" name="quanti"id="quantip" >
+                <input type="text" class="form-control" name="quanti" id="quantip" required data-parsley-trigger="change" data-parsley-type="digits">
               </div>
-              <!-- <div class="mb-3">
+              <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
                 
-                <input class="form-control" type="file" name="image" id="imagep" >
-              </div> -->
+                <input class="form-control" type="file" name="image" id="imagep" required data-parsley-trigger="change">
+              </div>
               <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="submit" name="bntupdate" class="btn btn-primary">Updeat</button>
@@ -158,10 +153,10 @@
       $("#myTable").on('click', '.update', function() {
         var currentRow = $(this).closest("tr");
         $('#id').val(currentRow.find("td:eq(0)").text());
-        // $('#imagep').val(currentRow.find("td:eq(1)").text());
         $('#nomproduit').val(currentRow.find("td:eq(2)").text());
         $('#prixp').val(currentRow.find("td:eq(3)").text());
         $('#quantip').val(currentRow.find("td:eq(4)").text());
+        $('#imagep').val(currentRow.find("td:eq(1)").text());
       })
     })
   </script>
@@ -178,6 +173,8 @@
     }
   </script>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
 </body>
 
 </html>
